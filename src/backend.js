@@ -5,7 +5,7 @@ export class Match {
     this.userFighter = userFighter;
     this.computerFighter = computerFighter;
   }
-  maxAttack(fighter) { //methods for decreasing figher's health when receiving opponent's attacks
+  maxAttack(fighter) { //methods for decreasing a figher's health when its opponent attacks
   fighter.health -= 10;
   }
   medAttack(fighter) {
@@ -14,7 +14,7 @@ export class Match {
   minAttack(fighter) {
     fighter.health -= 5;
   }
-  pickRandomAttack() { //method to randomly pick the computerFighter's attack
+  pickRandomAttack() { //method to randomly pick the computerFighter's attack against the userFighter
   const number = Math.round(Math.random() * 2);
   if (number === 0) {
     this.maxAttack(this.userFighter);
@@ -37,7 +37,7 @@ export class Fighter {
     this.atHome = false; //boolean, will be "true" when animal is on home turf
   }
 
-  setHealth() { //method to increase fighter's health slowly over time. make sure to call this method when the fight begins and clear it (using clearInterval()) when the fight ends.
+  setHealth() { //method to increase fighter's health slowly over time. make sure to call this method when the fight begins and clear it (using clearInterval()) when the fight ends!
     this.healthInterval = setInterval(() => {
       this.health++;
     }, 2000);
@@ -45,15 +45,15 @@ export class Fighter {
   }
 }
 
-export function clickAttack(match) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then it is turned off for 2 seconds during which time it's the computer's turn.
+export function clickAttack(match) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
   const maxClick = function() {
-    match.maxAttack(match.computerFighter); //deal damage
+    match.maxAttack(match.computerFighter); //deal damage to computerFighter
     //turn off click listeners for all three buttons
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
     setTimeout(function() {
-      //wait 2 seconds before computerFighter's turn & turn all three buttons back on
+      //wait 2 seconds, then computer takes its turn & turns all three buttons back on
       match.pickRandomAttack();
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
@@ -94,17 +94,19 @@ export function clickAttack(match) { //function for turning click listeners on a
   $("#minAttack").click(minClick);
 }
 
-export function checkHealth(match) {
+export function checkHealth(match) { //method to check each fighter's health levels every half second. if it finds that one of the fighter has a health less than or equal to zero, declare the other player the winner and clear all the intervals.
   let checkInterval = setInterval(() => {
     if (match.userFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
       alert(`${match.computerFighter.name} Wins! `);
+
     } else if (match.computerFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
+      // change alert to modal???
       alert(`${match.userFighter.name} Wins!`);
     }
   }, 500);
