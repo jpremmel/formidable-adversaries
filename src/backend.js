@@ -17,11 +17,11 @@ export class Match {
   pickRandomAttack() { //method to randomly pick the computerFighter's attack
   const number = Math.round(Math.random() * 2);
   if (number === 0) {
-    maxAttack(this.userFighter);
+    this.maxAttack(this.userFighter);
   } else if (number === 1) {
-    medAttack(this.userFighter);
+    this.medAttack(this.userFighter);
   } else if (number === 2) {
-    minAttack(this.userFighter);
+    this.minAttack(this.userFighter);
   }
 }
 rematch() {
@@ -33,53 +33,79 @@ rematch() {
 export class Fighter {
   constructor(name) {
     this.name = name; //ex. "Bruce the Baboon"
-    health = 50;
-    atHome = false; //boolean, will be "true" when animal is on home turf
+    this.health = 50;
+    this.atHome = false; //boolean, will be "true" when animal is on home turf
   }
+
   setHealth() { //method to increase fighter's health slowly over time. make sure to call this method when the fight begins and clear it (using clearInterval()) when the fight ends.
     this.healthInterval = setInterval(() => {
       this.health++;
-    }, 1000);
+    }, 2000);
+
   }
 }
 
-export function clickAttack(match) {
-  $("#maxAttack").click(function() {
-    match.maxAttack(computerFighter);
+export function clickAttack(match) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then it is turned off for 2 seconds during which time it's the computer's turn.
+  const maxClick = function() {
+    match.maxAttack(match.computerFighter); //deal damage
+    //turn off click listeners for all three buttons
+    $("#maxAttack").off();
+    $("#medAttack").off();
+    $("#minAttack").off();
     setTimeout(function() {
-      //wait 2 seconds before computerFighter's turn
+      //wait 2 seconds before computerFighter's turn & turn all three buttons back on
       match.pickRandomAttack();
+      $("#maxAttack").click(maxClick);
+      $("#medAttack").click(medClick);
+      $("#minAttack").click(minClick);
     }, 2000);
-  });
+  console.log(match.computerFighter.health);
+  }
+  $("#maxAttack").click(maxClick);
 
-  $("#medAttack").click(function(){
-    match.medAttack(computerFighter);
+  const medClick = function(){
+    match.medAttack(match.computerFighter);
+    $("#maxAttack").off();
+    $("#medAttack").off();
+    $("#minAttack").off();
     setTimeout(function(){
       match.pickRandomAttack();
+      $("#maxAttack").click(maxClick);
+      $("#medAttack").click(medClick);
+      $("#minAttack").click(minClick);
     }, 2000);
-  });
+      console.log(match.computerFighter.health);
+  }
+  $("#medAttack").click(medClick);
 
-  $("#minAttack").click(function(){
-    match.minAttack(computerFighter);
+  const minClick = function(){
+    match.minAttack(match.computerFighter);
+    $("#maxAttack").off();
+    $("#medAttack").off();
+    $("#minAttack").off();
     setTimeout(function(){
       match.pickRandomAttack();
+      $("#maxAttack").click(maxClick);
+      $("#medAttack").click(medClick);
+      $("#minAttack").click(minClick);
     }, 2000);
-  });
-
+      console.log(match.computerFighter.health);
+  }
+  $("#minAttack").click(minClick);
 }
 
 export function checkHealth(match) {
   let checkInterval = setInterval(() => {
-    if (match.userFighter.health === 0) {
+    if (match.userFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
       alert(`${match.computerFighter.name} Wins! `);
-    } else if (match.computerFighter.health === 0) {
+    } else if (match.computerFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
       alert(`${match.userFighter.name} Wins!`);
     }
-  }, 2000);
-};
+  }, 500);
+}
