@@ -13,7 +13,6 @@ export class Match {
       this.userFighter.minAttack();
     }
   }
-
   rematch() {
     this.userFighter.health = 50;
     this.computerFighter.health = 50;
