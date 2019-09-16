@@ -1,7 +1,7 @@
 {
   "name": "formidable-adversaries",
   "version": "1.0.0",
-  "description": "",
+  "description": "#### _{Brief description of application}, 16 Sept 2019_",
   "main": "index.js",
   "scripts": {
     "test": "karma start karma.conf.js",
@@ -15,10 +15,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "",
-  "bugs": {
-    "url": ""
-  },
+  "license": "ISC",
   "homepage": "",
   "devDependencies": {
     "babel-core": "^6.26.0",
