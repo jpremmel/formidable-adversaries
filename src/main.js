@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { Match, Fighter, clickAttack } from './backend.js';
+import { Match, Fighter, clickAttack, checkHealth } from './backend.js';
 //Add import statements for classes and/or functions we write in frontend.js and backend.js
 
 
@@ -16,6 +16,7 @@ $(document).ready(function()) {
   const match = new Match(userFighter, computerFighter);
   match.userFighter.setHealth(); //start slow health increase interval for userFighter
   match.computerFighter.setHealth(); //start slow health increase interval for computerFighter
-
   clickAttack(match);
+  checkHealth(match);
+
 });

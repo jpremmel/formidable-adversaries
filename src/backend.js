@@ -7,27 +7,27 @@ export class Match {
   }
   maxAttack(fighter) { //methods for decreasing figher's health when receiving opponent's attacks
   fighter.health -= 10;
-}
-medAttack(fighter) {
-  fighter.health -= 7;
-}
-minAttack(fighter) {
-  fighter.health -= 5;
-}
-pickRandomAttack() { //method to randomly pick the computerFighter's attack
-const number = Math.round(Math.random() * 2);
-if (number === 0) {
-  maxAttack(this.userFighter);
-} else if (number === 1) {
-  medAttack(this.userFighter);
-} else if (number === 2) {
-  minAttack(this.userFighter);
-}
+  }
+  medAttack(fighter) {
+    fighter.health -= 7;
+  }
+  minAttack(fighter) {
+    fighter.health -= 5;
+  }
+  pickRandomAttack() { //method to randomly pick the computerFighter's attack
+  const number = Math.round(Math.random() * 2);
+  if (number === 0) {
+    maxAttack(this.userFighter);
+  } else if (number === 1) {
+    medAttack(this.userFighter);
+  } else if (number === 2) {
+    minAttack(this.userFighter);
+  }
 }
 rematch() {
   this.userFighter.health = 50;
   this.computerFighter.health = 50;
-}
+  }
 }
 
 export class Fighter {
@@ -37,10 +37,10 @@ export class Fighter {
     atHome = false; //boolean, will be "true" when animal is on home turf
   }
   setHealth() { //method to increase fighter's health slowly over time. make sure to call this method when the fight begins and clear it (using clearInterval()) when the fight ends.
-  setInterval(() => {
-    this.health++;
-  }, 1000);
-}
+    this.healthInterval = setInterval(() => {
+      this.health++;
+    }, 1000);
+  }
 }
 
 export function clickAttack(match) {
@@ -67,3 +67,19 @@ export function clickAttack(match) {
   });
 
 }
+
+export function checkHealth(match) {
+  let checkInterval = setInterval(() => {
+    if (match.userFighter.health === 0) {
+      clearInterval(match.userFighter.healthInterval);
+      clearInterval(match.computerFighter.healthInterval);
+      clearInterval(checkInterval);
+      alert(`${match.computerFighter.name} Wins! `);
+    } else if (match.computerFighter.health === 0) {
+      clearInterval(match.userFighter.healthInterval);
+      clearInterval(match.computerFighter.healthInterval);
+      clearInterval(checkInterval);
+      alert(`${match.userFighter.name} Wins!`);
+    }
+  }, 2000);
+};
