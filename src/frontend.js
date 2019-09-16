@@ -59,17 +59,17 @@ export function FrontEnd() {
     $('#crabBack').hide();
   });
 
-  $('#pteradactylChoose').click(function() {
+  $('#pterodactylChoose').click(function() {
     $('.characters').hide();
     $('.arena').show(); //still need to make arena div and initially hide
   });
-  $('#pteradactylInfo').click(function() {
-    $('#pteradactylFront').hide();
-    $('#pteradactylBack').show();
+  $('#pterodactylInfo').click(function() {
+    $('#pterodactylFront').hide();
+    $('#pterodactylBack').show();
   });
-  $('#pteradactylToFront').click(function() {
-    $('#pteradactylFront').show();
-    $('#pteradactylBack').hide();
+  $('#pterodactylToFront').click(function() {
+    $('#pterodactylFront').show();
+    $('#pterodactylBack').hide();
   });
 
   $('#penguinChoose').click(function() {
