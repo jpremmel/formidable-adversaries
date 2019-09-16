@@ -1,22 +1,33 @@
+import $ from 'jquery';
+
 export class Match {
   constructor(userFighter, computerFighter) {
     this.userFighter = userFighter;
     this.computerFighter = computerFighter;
   }
-  pickRandomAttack() { //method to randomly pick the computerFighter's attack
-    const number = Math.round(Math.random() * 2);
-    if (number === 0) {
-      this.userFighter.maxAttack();
-    } else if (number === 1) {
-      this.userFighter.medAttack();
-    } else if (number === 2) {
-      this.userFighter.minAttack();
-    }
-  }
-  rematch() {
-    this.userFighter.health = 50;
-    this.computerFighter.health = 50;
-  }
+  maxAttack(fighter) { //methods for decreasing figher's health when receiving opponent's attacks
+  fighter.health -= 10;
+}
+medAttack(fighter) {
+  fighter.health -= 7;
+}
+minAttack(fighter) {
+  fighter.health -= 5;
+}
+pickRandomAttack() { //method to randomly pick the computerFighter's attack
+const number = Math.round(Math.random() * 2);
+if (number === 0) {
+  maxAttack(this.userFighter);
+} else if (number === 1) {
+  medAttack(this.userFighter);
+} else if (number === 2) {
+  minAttack(this.userFighter);
+}
+}
+rematch() {
+  this.userFighter.health = 50;
+  this.computerFighter.health = 50;
+}
 }
 
 export class Fighter {
@@ -30,13 +41,29 @@ export class Fighter {
     this.health++;
   }, 1000);
 }
-  maxAttack() { //methods for decreasing figher's health when receiving opponent's attacks
-    this.health -= 10;
-  }
-  medAttack() {
-    this.health -= 7;
-  }
-  minAttack() {
-    this.health -= 5;
-  }
+}
+
+export function clickAttack(match) {
+  $("#maxAttack").click(function() {
+    match.maxAttack(computerFighter);
+    setTimeout(function() {
+      //wait 2 seconds before computerFighter's turn
+      match.pickRandomAttack();
+    }, 2000);
+  });
+
+  $("#medAttack").click(function(){
+    match.medAttack(computerFighter);
+    setTimeout(function(){
+      match.pickRandomAttack();
+    }, 2000);
+  });
+
+  $("#minAttack").click(function(){
+    match.minAttack(computerFighter);
+    setTimeout(function(){
+      match.pickRandomAttack();
+    }, 2000);
+  });
+
 }
