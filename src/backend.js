@@ -44,14 +44,62 @@ export class Fighter {
 
   }
 }
+export function chooseOpponent(userChoice) {
+  let characters = ["Carol the Cactus", "Octavia the Octopus", "Bruce the Baboon", "Lenny Crabitz", "Pterry the Pterodactyl", "Patti the Penguin", "Misty the Mountain Goat", "Gart the Gator", "Paco the Pig"];
 
-export function buttonScramble() {
-  let buttons = [`<button id="maxAttack" class="btn">Max</button>`, `<button id="medAttack" class="btn">Med</button>`, `<button id="minAttack" class="btn">Min</button>`];
+  for(let i = 0; i < characters.length; i++){
+    if(characters[i]===userChoice){
+      characters.splice(i, 1);
+    }
+  }
+let numberFighter = Math.round(Math.random() * 7);
+return characters[numberFighter];
+}
+
+export function buttonScramble(fighterName) { //function to scramble the order in which the three attack buttons are appended to the html page. need to call this function when the match begins.
+  let buttons = [`<button id="maxAttack" class="btn"></button>`, `<button id="medAttack" class="btn"></button>`, `<button id="minAttack" class="btn"></button>`];
   const numberRemove = Math.round(Math.random() * 2);
   const numberInsert = Math.round(Math.random() * 2);
   buttons.splice(numberInsert, 0, buttons.splice(numberRemove, 1)[0]);
   for (let i = 0; i < buttons.length; i++) {
     $(".attack-buttons").append(buttons[i]);
+  }
+  if (fighterName === "Carol the Cactus"){
+    $("#maxAttack").text("Throw Spikes");
+    $("#medAttack").text("Flash Flood");
+    $("#minAttack").text("Blind With Sunlight");
+  } else if (fighterName === "Octavia the Octopus"){
+    $("#maxAttack").text("Beak Bite");
+    $("#medAttack").text("Ink Attack");
+    $("#minAttack").text("Camoflauge Attack");
+  } else if (fighterName === "Bruce the Baboon"){
+    $("#maxAttack").text("Banshee Cry");
+    $("#medAttack").text("Tail Choke");
+    $("#minAttack").text("Power Bite");
+  } else if (fighterName === "Lenny Crabitz"){
+    $("#maxAttack").text("Scarf Strangle");
+    $("#medAttack").text("Death Pinch");
+    $("#minAttack").text("Fish Fart");
+  } else if (fighterName === "Pterry the Pterodactyl"){
+    $("#maxAttack").text("Eye Gouge");
+    $("#medAttack").text("Boom Flap");
+    $("#minAttack").text("Swoop n' Snatch");
+  } else if (fighterName === "Patti the Penguin"){
+    $("#maxAttack").text("Flap Slap");
+    $("#medAttack").text("Slip n' Slide");
+    $("#minAttack").text("Icicle Impalement");
+  } else if (fighterName === "Misty the Mountain Goat"){
+    $("#maxAttack").text("BAAttle Cry");
+    $("#medAttack").text("Powerkick");
+    $("#minAttack").text("Head Butt");
+  } else if (fighterName === "Gart the Gator"){
+    $("#maxAttack").text("Death Roll");
+    $("#medAttack").text("Snapper Bite");
+    $("#minAttack").text("Tail Smack");
+  } else if (fighterName === "Paco the Pig"){
+    $("#maxAttack").text("Smother Sit");
+    $("#medAttack").text("Acid Mud");
+    $("#minAttack").text("Oink Overload");
   }
 }
 
@@ -106,7 +154,9 @@ export function clickAttack(match) { //function for turning click listeners on a
 
 export function checkHealth(match) { //method to check each fighter's health levels every half second. if it finds that one of the fighter has a health less than or equal to zero, declare the other player the winner and clear all the intervals.
   let checkInterval = setInterval(() => {
-    if (match.userFighter.health <= 0) {
+    $("#computerHealth").html(`${match.computerFighter.name}'s Health Level: ${match.computerFighter.health}`);
+    $("#userHealth").html(`${match.userFighter.name}'s Health Level: ${match.userFighter.health}`);
+      if (match.userFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
