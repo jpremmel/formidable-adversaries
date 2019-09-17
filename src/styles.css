@@ -26,61 +26,61 @@ img {
   margin-bottom: auto;
 }
 
-.desert-background {
+.Desert-background {
   background-image: url("./img/desertArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.ocean-background {
+.Ocean-background {
   background-image: url("./img/oceanArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.jungle-background {
+.Jungle-background {
   background-image: url("./img/jungleArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.beach-background {
+.Beach-background {
   background-image: url("./img/beachArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.sky-background {
+.Sky-background {
   background-image: url("./img/skyArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.arctic-background {
+.Arctic-background {
   background-image: url("./img/arcticArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.mountain-background {
+.Mountain-background {
   background-image: url("./img/mountainArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.swamp-background {
+.Swamp-background {
   background-image: url("./img/swampArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.farm-background {
+.Farm-background {
   background-image: url("./img/farmArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
-.moon-background {
+.Moon-background {
   background-image: url("./img/moonArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;

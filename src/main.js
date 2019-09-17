@@ -8,13 +8,19 @@ import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponen
 
 $(document).ready(function() {
   //CALL FUNCTIONS AND INSTANTIATE CLASSES written in frontend.js and backend.js and imported above
-
   FrontEnd();
+  let userChoice;
+  let compChoice;
+  let arena;
+  $(".card").on("click", ".choose", function() {
+    userChoice = this.name;
+  });
+  $(".card-img-overlay").on("click", "h1", function() {
+    arena = $(this).text();
+    $("body").addClass(`${arena}-background`);
+    $(".arena").hide();
 
-   $(".card").on("click", ".choose", function() {
-     let userChoice = this.name ;
-     let compChoice = chooseOpponent(userChoice);
-
+    compChoice = chooseOpponent(userChoice);
     const userFighter = new Fighter(userChoice); //example; will populate this with the user's choice
     const computerFighter = new Fighter(compChoice); //example; will populate this with a computer-generated choice
     const match = new Match(userFighter, computerFighter);
@@ -25,4 +31,5 @@ $(document).ready(function() {
     clickAttack(match); //function to manage click listeners during match
     checkHealth(match); //function to continuously monitor both players' health levels and end the game when one reaches zero
   });
+
 });
