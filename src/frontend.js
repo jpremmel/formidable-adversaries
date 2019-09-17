@@ -3,7 +3,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
+
 export function FrontEnd() {
+  //Character Functionality
   $('#cactusChoose').click(function() {
     $('.characters').hide();
     $('.arena').show(); //still need to make arena div and initially hide
@@ -16,10 +18,7 @@ export function FrontEnd() {
     $('#cactusFront').show();
     $('#cactusBack').hide();
   });
-  // $('#cactusChooseB').click(function() {
-  //   $('.characters').hide();
-  //   $('.arena').show(); //still need to make arena div and initially hide
-  // });
+
   $('#octopusChoose').click(function() {
     $('.characters').hide();
     $('.arena').show(); //still need to make arena div and initially hide
@@ -123,4 +122,6 @@ export function FrontEnd() {
     $('#pigFront').show();
     $('#pigBack').hide();
   });
+
+
 }

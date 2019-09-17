@@ -15,3 +15,74 @@ img {
   height: 350px;
   display: block;
 }
+
+.arena {
+  display: none;
+}
+
+.card-title {
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: auto;
+}
+
+.desert-background {
+  background-image: url("./img/desertArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.ocean-background {
+  background-image: url("./img/oceanArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.jungle-background {
+  background-image: url("./img/jungleArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.beach-background {
+  background-image: url("./img/beachArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.sky-background {
+  background-image: url("./img/skyArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.arctic-background {
+  background-image: url("./img/arcticArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.mountain-background {
+  background-image: url("./img/mountainArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.swamp-background {
+  background-image: url("./img/swampArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.farm-background {
+  background-image: url("./img/farmArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.moon-background {
+  background-image: url("./img/moonArena.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
