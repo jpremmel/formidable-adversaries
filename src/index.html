@@ -14,7 +14,7 @@
                 <img class="card-img-top" src="./img/cactus.png" alt="cactus">
                 <h3>Carol the Cactus</h3>
                 <p class="blurb">Blurby</p>
-                <button id="cactusChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="cactusChoose" class="btn choose" type="button" name="Carol the Cactus">Choose</button>
                 <button id="cactusInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="cactusBack">
@@ -34,7 +34,7 @@
                 <img class="card-img-top" src="./img/octopus.png" alt="octopus">
                 <h3>Octavia the Octopus</h3>
                 <p class="blurb">Blurby</p>
-                <button id="octopusChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="octopusChoose" class="btn choose" type="button" name="Octavia the Octopus">Choose</button>
                 <button id="octopusInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="octopusBack">
@@ -54,7 +54,7 @@
                 <img class="card-img-top" src="./img/baboon.png" alt="baboon">
                 <h3>Bruce the Baboon</h3>
                 <p class="blurb">Blurby</p>
-                <button id="baboonChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="baboonChoose" class="btn choose" type="button" name="Bruce the Baboon">Choose</button>
                 <button id="baboonInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="baboonBack">
@@ -76,7 +76,7 @@
                 <img class="card-img-top" src="./img/crab.png" alt="crab">
                 <h3>Lenny Crabitz</h3>
                 <p class="blurb">Blurby</p>
-                <button id="crabChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="crabChoose" class="btn choose" type="button" name="Lenny Crabitz">Choose</button>
                 <button id="crabInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="crabBack">
@@ -96,7 +96,7 @@
                 <img class="card-img-top" src="./img/pterodactyl.png" alt="pterodactyl">
                 <h3>Pterry the Pterodactyl</h3>
                 <p class="blurb">Blurby</p>
-                <button id="pterodactylChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="pterodactylChoose" class="btn choose" type="button" name="Pterry the Pterodactyl">Choose</button>
                 <button id="pterodactylInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="pterodactylBack">
@@ -116,7 +116,7 @@
                 <img class="card-img-top" src="./img/penguin.png" alt="penguin">
                 <h3>Patti the Penguin</h3>
                 <p class="blurb">Blurby</p>
-                <button id="penguinChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="penguinChoose" class="btn choose" type="button" name="Patti the Penguin">Choose</button>
                 <button id="penguinInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="penguinBack">
@@ -138,7 +138,7 @@
                 <img class="card-img-top" src="./img/goat.png" alt="goat">
                 <h3>Misty the Mountain Goat</h3>
                 <p class="blurb">Blurby</p>
-                <button id="goatChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="goatChoose" class="btn choose" type="button" name="Misty the Mountain Goat">Choose</button>
                 <button id="goatInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="goatBack">
@@ -158,7 +158,7 @@
                 <img class="card-img-top" src="./img/gator.png" alt="gator">
                 <h3>Gart the Gator</h3>
                 <p class="blurb">Blurby</p>
-                <button id="gatorChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="gatorChoose" class="btn choose" type="button" name="Gart the Gator">Choose</button>
                 <button id="gatorInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="gatorBack">
@@ -178,7 +178,7 @@
                 <img class="card-img-top" src="./img/pig.png" alt="pig">
                 <h3>Paco the Pig</h3>
                 <p class="blurb">Blurby</p>
-                <button id="pigChoose" class="btn" type="button" name="button">Choose</button>
+                <button id="pigChoose" class="btn choose" type="button" name="Paco the Pig">Choose</button>
                 <button id="pigInfo" class="btn" type="button" name="button">More Info</button>
               </div>
               <div class="card back" id="pigBack">
@@ -306,6 +306,16 @@
           </div>
         </div>
       </div>
+
+      <!-- BACKEND GAME PLAY -->
+      <div class="game-play">
+        <h3><span id="computerHealth"></span></h3>
+        <h3><span id="userHealth"></span></h3>
+        <div class="attack-buttons"></div>
+        <h4 id="whoseTurn"></h4>
+        <div id="whichAttack"></div>
+      </div>
+
     </div> <!-- //container div -->
   </body>
 </html>
