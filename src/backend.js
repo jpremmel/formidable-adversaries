@@ -45,6 +45,16 @@ export class Fighter {
   }
 }
 
+export function buttonScramble() {
+  let buttons = [`<button id="maxAttack" class="btn">Max</button>`, `<button id="medAttack" class="btn">Med</button>`, `<button id="minAttack" class="btn">Min</button>`];
+  const numberRemove = Math.round(Math.random() * 2);
+  const numberInsert = Math.round(Math.random() * 2);
+  buttons.splice(numberInsert, 0, buttons.splice(numberRemove, 1)[0]);
+  for (let i = 0; i < buttons.length; i++) {
+    $(".attack-buttons").append(buttons[i]);
+  }
+}
+
 export function clickAttack(match) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
   const maxClick = function() {
     match.maxAttack(match.computerFighter); //deal damage to computerFighter
