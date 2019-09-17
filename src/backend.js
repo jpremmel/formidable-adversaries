@@ -107,6 +107,8 @@ export function clickAttack(match) { //function for turning click listeners on a
   const maxClick = function() {
     match.maxAttack(match.computerFighter); //deal damage to computerFighter
     //turn off click listeners for all three buttons
+    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!'`);
+    console.log(`It's ${match.computerFighter.name}'s turn!'`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
@@ -116,6 +118,8 @@ export function clickAttack(match) { //function for turning click listeners on a
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
+      $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+      console.log(`It's ${match.userFighter.name}'s turn!`);
     }, 2000);
   console.log(match.computerFighter.health);
   }
@@ -123,6 +127,8 @@ export function clickAttack(match) { //function for turning click listeners on a
 
   const medClick = function(){
     match.medAttack(match.computerFighter);
+    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
+    console.log(`It's ${match.computerFighter.name}'s turn!`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
@@ -131,6 +137,8 @@ export function clickAttack(match) { //function for turning click listeners on a
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
+      $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+      console.log(`It's ${match.userFighter.name}'s turn!`);
     }, 2000);
       console.log(match.computerFighter.health);
   }
@@ -138,6 +146,8 @@ export function clickAttack(match) { //function for turning click listeners on a
 
   const minClick = function(){
     match.minAttack(match.computerFighter);
+    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!'`);
+    console.log(`It's ${match.computerFighter.name}'s turn!`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
@@ -146,6 +156,8 @@ export function clickAttack(match) { //function for turning click listeners on a
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
+      $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+      console.log(`It's ${match.userFighter.name}'s turn!`);
     }, 2000);
       console.log(match.computerFighter.health);
   }
@@ -169,5 +181,5 @@ export function checkHealth(match) { //method to check each fighter's health lev
       // change alert to modal???
       alert(`${match.userFighter.name} Wins!`);
     }
-  }, 500);
+  }, 100);
 }
