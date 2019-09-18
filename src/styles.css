@@ -18,6 +18,32 @@
   margin-bottom: auto;
 }
 
+.front {
+  background-color: #535353;
+}
+
+body {
+  background-color: #1A0315;
+  color: #6E3667;
+}
+h1 {
+font-family: 'Press Start 2P', cursive;
+text-align: center;
+font-size: 75px;
+color: black;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: white;
+}
+
+#userHealth, #computerHealth{
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  color: white;
+  background-color:rgba(0,0,0,0.5);
+}
+ #whoseTurn {
+   font-family: 'Orbitron', sans-serif;
+ }
 .Desert-background {
   background-image: url("./img/desertArena.jpg");
   background-size: cover;
@@ -78,17 +104,43 @@
   background-repeat: no-repeat;
   text-align: center;
 }
-
 .userImage {
   margin-left: 5px;
-  margin-right: 900px;
+  margin-right: 1200px;
   margin-bottom: 75px;
-  height: 450px;
+  max-height: 350px;
+  height:auto;
+  width:auto;
 }
-
 .computerImage {
-  margin-left: 900px;
+  margin-left: 1200px;
   margin-right: 5px;
   margin-bottom: 75px;
-  height: 450px;
+  max-height: 350px;
+  height:auto;
+  width:auto;
+}
+#fixed-top-comp {
+  margin-left: 1100px;
+  margin-right: 5px;
+  margin-top: 300px;
+}
+#fixed-top-user {
+  margin-right: 1100px;
+  margin-bottom: 75px;
+  margin-top: 300px;
+}
+.btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.btn-danger {
+    background-color: black;
+}
+
+#attackChunk {
+  margin-bottom: 50px;
+
 }
