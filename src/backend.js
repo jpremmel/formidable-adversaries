@@ -43,6 +43,11 @@ export class Fighter {
     }, 2000);
 
   }
+  applyHomeAdvantage() {
+    if (this.atHome){
+      this.health += 10;
+    }
+  }
 }
 export function chooseOpponent(userChoice) {
   let characters = ["Carol the Cactus", "Octavia the Octopus", "Bruce the Baboon", "Lenny Crabitz", "Pterry the Pterodactyl", "Patti the Penguin", "Misty the Mountain Goat", "Gart the Gator", "Paco the Pig"];
@@ -101,6 +106,7 @@ export function buttonScramble(userFighterName, compFighterName) { //function to
     $("#medAttack").text("Acid Mud");
     $("#minAttack").text("Oink Overload");
   }
+
 let compAttacksArray;
 
   if (compFighterName === "Carol the Cactus"){
@@ -132,8 +138,32 @@ let compAttacksArray;
 
   }
   return compAttacksArray;
-
 }
+
+export function checkHomeArena(fighter, arena) {
+  if (fighter.name === "Carol the Cactus" && arena === "Desert"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Octavia the Octopus" && arena === "Ocean"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Bruce the Baboon" && arena === "Jungle"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Lenny Crabitz" && arena === "Beach"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Pterry the Pterodactyl" && arena === "Sky"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Patti the Penguin" && arena === "Arctic"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Misty the Mountain Goat" && arena === "Mountain"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Gart the Gator" && arena === "Swamp"){
+    fighter.atHome = true;
+  } else if (fighter.name === "Paco the Pig" && arena === "Farm"){
+    fighter.atHome = true;
+  }
+}
+
+
+
 
 export function clickAttack(match, compAttacksArray) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
   const maxClick = function() {

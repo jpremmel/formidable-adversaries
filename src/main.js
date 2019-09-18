@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { FrontEnd } from './frontend.js'
-import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponent } from './backend.js';
+import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponent, checkHomeArena } from './backend.js';
 //ADD IMPORT STATEMENTS for classes and/or functions we write in frontend.js and backend.js
 
 $(document).ready(function() {
@@ -23,7 +23,13 @@ $(document).ready(function() {
     $("#userImg").html(`<img src="./img/${userChoice}.png">`);
     $("#computerImg").html(`<img src="./img/${compChoice}.png">`);
     const userFighter = new Fighter(userChoice); //example; will populate this with the user's choice
+    checkHomeArena(userFighter, arena); //check to see if the user's fighter is in their home arena
+
+    userFighter.applyHomeAdvantage(); //method to add 10 health points if the user's fighter is at home
+
     const computerFighter = new Fighter(compChoice); //example; will populate this with a computer-generated choice
+    checkHomeArena(computerFighter, arena); //check to see if the computer's fighter is in their home arena
+    computerFighter.applyHomeAdvantage(); //method to add 10 health points if the computer's fighter is at home
     const match = new Match(userFighter, computerFighter);
     $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
     match.userFighter.setHealth(); //start interval to slowly increase the userFighter's health over time
