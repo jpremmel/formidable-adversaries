@@ -86,3 +86,11 @@ img {
   background-repeat: no-repeat;
   text-align: center;
 }
+.blueBackground {
+  background-color: #00004d;
+}
+.lightningFlash {
+  background-image: url("./img/lightning_PNG23.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
