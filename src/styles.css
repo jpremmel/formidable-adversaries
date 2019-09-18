@@ -1,17 +1,9 @@
 .back {
   display: none;
 }
-
 /* https://codepen.io/kristenzirkler/pen/eDzIE */
 
-/* body {
-  background-image: url("./img/MoonArena.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-} */
-
-img {
+.card-img-top {
   height: 350px;
   display: block;
 }
@@ -85,4 +77,18 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+}
+
+.userImage {
+  margin-left: 5px;
+  margin-right: 900px;
+  margin-bottom: 75px;
+  height: 450px;
+}
+
+.computerImage {
+  margin-left: 900px;
+  margin-right: 5px;
+  margin-bottom: 75px;
+  height: 450px;
 }

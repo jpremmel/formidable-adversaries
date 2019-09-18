@@ -20,8 +20,8 @@ $(document).ready(function() {
     $("body").addClass(`${arena}-background`);
     $(".arena").hide();
     compChoice = chooseOpponent(userChoice);
-    $("#userImg").html(`<img src="./img/${userChoice}.png">`);
-    $("#computerImg").html(`<img src="./img/${compChoice}.png">`);
+    $("#userImg").html(`<img class="userImage" src="./img/${userChoice}.png">`);
+    $("#computerImg").html(`<img class="computerImage" src="./img/${compChoice}.png">`);
     const userFighter = new Fighter(userChoice); //example; will populate this with the user's choice
     const computerFighter = new Fighter(compChoice); //example; will populate this with a computer-generated choice
     const match = new Match(userFighter, computerFighter);
