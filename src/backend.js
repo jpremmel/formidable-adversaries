@@ -56,7 +56,7 @@ let numberFighter = Math.round(Math.random() * 7);
 return characters[numberFighter];
 }
 
-export function buttonScramble(fighterName) { //function to scramble the order in which the three attack buttons are appended to the html page. need to call this function when the match begins.
+export function buttonScramble(userFighterName, compFighterName) { //function to scramble the order in which the three attack buttons are appended to the html page. need to call this function when the match begins.
   let buttons = [`<button id="maxAttack" class="btn"></button>`, `<button id="medAttack" class="btn"></button>`, `<button id="minAttack" class="btn"></button>`];
   const numberRemove = Math.round(Math.random() * 2);
   const numberInsert = Math.round(Math.random() * 2);
@@ -64,102 +64,138 @@ export function buttonScramble(fighterName) { //function to scramble the order i
   for (let i = 0; i < buttons.length; i++) {
     $(".attack-buttons").append(buttons[i]);
   }
-  if (fighterName === "Carol the Cactus"){
+  if (userFighterName === "Carol the Cactus"){
     $("#maxAttack").text("Throw Spikes");
     $("#medAttack").text("Flash Flood");
     $("#minAttack").text("Blind With Sunlight");
-  } else if (fighterName === "Octavia the Octopus"){
+  } else if (userFighterName === "Octavia the Octopus"){
     $("#maxAttack").text("Beak Bite");
     $("#medAttack").text("Ink Attack");
     $("#minAttack").text("Camoflauge Attack");
-  } else if (fighterName === "Bruce the Baboon"){
+  } else if (userFighterName === "Bruce the Baboon"){
     $("#maxAttack").text("Banshee Cry");
     $("#medAttack").text("Tail Choke");
     $("#minAttack").text("Power Bite");
-  } else if (fighterName === "Lenny Crabitz"){
+  } else if (userFighterName === "Lenny Crabitz"){
     $("#maxAttack").text("Scarf Strangle");
     $("#medAttack").text("Death Pinch");
     $("#minAttack").text("Fish Fart");
-  } else if (fighterName === "Pterry the Pterodactyl"){
+  } else if (userFighterName === "Pterry the Pterodactyl"){
     $("#maxAttack").text("Eye Gouge");
     $("#medAttack").text("Boom Flap");
     $("#minAttack").text("Swoop n' Snatch");
-  } else if (fighterName === "Patti the Penguin"){
+  } else if (userFighterName === "Patti the Penguin"){
     $("#maxAttack").text("Flap Slap");
     $("#medAttack").text("Slip n' Slide");
     $("#minAttack").text("Icicle Impalement");
-  } else if (fighterName === "Misty the Mountain Goat"){
+  } else if (userFighterName === "Misty the Mountain Goat"){
     $("#maxAttack").text("BAAttle Cry");
     $("#medAttack").text("Powerkick");
     $("#minAttack").text("Head Butt");
-  } else if (fighterName === "Gart the Gator"){
+  } else if (userFighterName === "Gart the Gator"){
     $("#maxAttack").text("Death Roll");
     $("#medAttack").text("Snapper Bite");
     $("#minAttack").text("Tail Smack");
-  } else if (fighterName === "Paco the Pig"){
+  } else if (userFighterName === "Paco the Pig"){
     $("#maxAttack").text("Smother Sit");
     $("#medAttack").text("Acid Mud");
     $("#minAttack").text("Oink Overload");
   }
+let compAttacksArray;
+
+  if (compFighterName === "Carol the Cactus"){
+    compAttacksArray = ["Throw Spikes", "Flash Flood", "Blind With Sunlight"];
+
+  } else if (compFighterName === "Octavia the Octopus"){
+    compAttacksArray = ["Beak Bite", "Ink Attack", "Camoflauge Attack"];
+
+  } else if (compFighterName === "Bruce the Baboon"){
+    compAttacksArray = ["Banshee Cry", "Tail Choke", "Power Bite"];
+
+  } else if (compFighterName === "Lenny Crabitz"){
+    compAttacksArray = ["Scarf Strangle", "Death Pinch", "Fish Fart"];
+
+  } else if (compFighterName === "Pterry the Pterodactyl"){
+    compAttacksArray = ["Eye Gouge", "Boom Flap", "Swoop n' Snatch"];
+
+  } else if (compFighterName === "Patti the Penguin"){
+    compAttacksArray = ["Flap Slap", "Slip n' Slide", "Icicle Impalement"];
+
+  } else if (compFighterName === "Misty the Mountain Goat"){
+    compAttacksArray = ["BAAttle Cry", "Powerkick", "Head Butt"];
+
+  } else if (compFighterName === "Gart the Gator"){
+    compAttacksArray = ["Death Roll", "Snapper Bite", "Tail Smack"];
+
+  } else if (compFighterName === "Paco the Pig"){
+    compAttacksArray = ["Smother Sit", "Acid Mud", "Oink Overload"];
+
+  }
+  return compAttacksArray;
+
 }
 
-export function clickAttack(match) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
+export function clickAttack(match, compAttacksArray) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
   const maxClick = function() {
     match.maxAttack(match.computerFighter); //deal damage to computerFighter
+
+    $("#userAttack").html(`<h3><em>${$("#maxAttack").text()}!</em></h3>`);
     //turn off click listeners for all three buttons
-    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!'`);
-    console.log(`It's ${match.computerFighter.name}'s turn!'`);
+    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
     setTimeout(function() {
       //wait 2 seconds, then computer takes its turn & turns all three buttons back on
       match.pickRandomAttack();
+      const number =  Math.round(Math.random() * 2);
+      $("#computerAttack").html(`<h3><em>${compAttacksArray[number]}!</em></h3>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
       $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
-      console.log(`It's ${match.userFighter.name}'s turn!`);
     }, 2000);
-  console.log(match.computerFighter.health);
   }
   $("#maxAttack").click(maxClick);
 
   const medClick = function(){
     match.medAttack(match.computerFighter);
+  $("#userAttack").html(`<h3><em>${$("#medAttack").text()}!</em></h3>`);
+
     $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
-    console.log(`It's ${match.computerFighter.name}'s turn!`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
     setTimeout(function(){
       match.pickRandomAttack();
+      const number =  Math.round(Math.random() * 2);
+      $("#computerAttack").html(`<h3><em>${compAttacksArray[number]}!</em></h3>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
       $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
-      console.log(`It's ${match.userFighter.name}'s turn!`);
     }, 2000);
-      console.log(match.computerFighter.health);
   }
   $("#medAttack").click(medClick);
 
   const minClick = function(){
     match.minAttack(match.computerFighter);
-    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!'`);
-    console.log(`It's ${match.computerFighter.name}'s turn!`);
+    $("#userAttack").html(`<h3><em>${$("#minAttack").text()}!</em></h3>`);
+    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
+
+
     setTimeout(function(){
       match.pickRandomAttack();
+      const number =  Math.round(Math.random() * 2);
+      $("#computerAttack").html(`<h3><em>${compAttacksArray[number]}!</em></h3>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
       $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
-      console.log(`It's ${match.userFighter.name}'s turn!`);
     }, 2000);
-      console.log(match.computerFighter.health);
   }
   $("#minAttack").click(minClick);
 }
