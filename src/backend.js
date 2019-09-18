@@ -63,7 +63,7 @@ return characters[numberFighter];
 }
 
 export function buttonScramble(userFighterName, compFighterName) { //function to scramble the order in which the three attack buttons are appended to the html page. need to call this function when the match begins.
-  let buttons = [`<button id="maxAttack" class="btn"></button>`, `<button id="medAttack" class="btn"></button>`, `<button id="minAttack" class="btn"></button>`];
+  let buttons = [`<button id="maxAttack" class="btn btn-danger"></button>`, `<button id="medAttack" class="btn btn-danger"></button>`, `<button id="minAttack" class="btn btn-danger"></button>`];
   const numberRemove = Math.round(Math.random() * 2);
   const numberInsert = Math.round(Math.random() * 2);
   buttons.splice(numberInsert, 0, buttons.splice(numberRemove, 1)[0]);

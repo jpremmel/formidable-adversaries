@@ -17,11 +17,9 @@ $(document).ready(function() {
     const arena = $(this).text();
     $("body").addClass(`${arena}-background`);
     $(".arena").hide();
-
-    const compChoice = chooseOpponent(userChoice);
-    $("#userImg").html(`<img src="./img/${userChoice}.png">`);
-    $("#computerImg").html(`<img src="./img/${compChoice}.png">`);
-
+    compChoice = chooseOpponent(userChoice);
+    $("#userImg").html(`<img class="userImage" src="./img/${userChoice}.png">`);
+    $("#computerImg").html(`<img class="computerImage" src="./img/${compChoice}.png">`);
     const userFighter = new Fighter(userChoice); //example; will populate this with the user's choice
     checkHomeArena(userFighter, arena); //check to see if the user's fighter is in their home arena
     userFighter.applyHomeAdvantage(); //method to add 10 health points if the user's fighter is at home
