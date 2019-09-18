@@ -35,6 +35,11 @@ $(document).ready(function() {
     match.userFighter.setHealth(); //start interval to slowly increase the userFighter's health over time
     match.computerFighter.setHealth(); //start interval to slowly increase the userFighter's health over time
     const compAttacksArray = buttonScramble(userFighter.name, computerFighter.name);
+    if (userFighter.atHome){
+      alert(`${userFighter.name} has the home court advantage! Enjoy 10 extra health points!`);
+    } else if (computerFighter.atHome){
+      alert(`Your opponent, ${computerFighter.name}, has the home court advantage of 10 extra health points!`);
+    }
     //function to scramble the order of the maxAttack, medAttack, and minAttack buttons before appending them to the html (so the user doesn't figure out that the one on the right always gives the highest attack damage, for example)
     clickAttack(match, compAttacksArray); //function to manage click listeners during match
     checkHealth(match); //function to continuously monitor both players' health levels and end the game when one reaches zero
