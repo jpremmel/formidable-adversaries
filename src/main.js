@@ -15,11 +15,11 @@ $(document).ready(function() {
     const arena = $(this).text();
     $(".arena").hide();
     const compChoice = chooseOpponent(userChoice);
-    $("#userImg").html(`<img src="./img/${userChoice}.png">`);
-    $("#computerImg").html(`<img src="./img/${compChoice}.png">`);
 
-    const userFighter = new Fighter(userChoice);
-    checkHomeArena(userFighter, arena);
+    $("#userImg").html(`<img class="userImage" src="./img/${userChoice}.png">`);
+    $("#computerImg").html(`<img class="computerImage" src="./img/${compChoice}.png">`);
+    const userFighter = new Fighter(userChoice); 
+    checkHomeArena(userFighter, arena); 
     userFighter.applyHomeAdvantage();
 
     const computerFighter = new Fighter(compChoice);
@@ -32,6 +32,7 @@ $(document).ready(function() {
       alert(`Your opponent, ${computerFighter.name}, has the home court advantage of 10 extra health points!`);
     }
     const match = new Match(userFighter, computerFighter);
+
     $(".game-play").hide();
     $("h1").hide();
     $("body").addClass("blueBackground");
@@ -47,8 +48,7 @@ $(document).ready(function() {
       match.userFighter.setHealth();
       match.computerFighter.setHealth();
     }, 200);
-
-    $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+    $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
     const compAttacksArray = buttonScramble(userFighter.name, computerFighter.name);
     clickAttack(match, compAttacksArray);
     checkHealth(match);

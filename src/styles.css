@@ -2,17 +2,9 @@
   display: none;
 }
 
-/* https://codepen.io/kristenzirkler/pen/eDzIE */
-
-/* body {
-  background-image: url("./img/MoonArena.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-} */
-
-img {
-  height: 350px;
+.card-img-top {
+  width: 318px;
+  height: 335px;
   display: block;
 }
 
@@ -26,71 +18,231 @@ img {
   margin-bottom: auto;
 }
 
+.back {
+  background-color: #535353;
+  border-radius: 15px;
+  margin-top: 20px;
+  height: 500px;
+  padding: 15px;
+}
+
+.front {
+  background-color: #535353;
+  border-radius: 15px;
+  margin-top: 20px;
+  height: 500px;
+  padding: 15px;
+}
+
+.arena img {
+  border-radius: 15px;
+  height: 358px;
+  width: 555px;
+}
+
+.arena .card {
+  border-radius: 15px;
+  height: 358px;
+  width: 555px;
+  background-color: #1A0315;
+  margin: 8px;
+}
+
+li {
+  color: #2eb82e;
+  font-family: 'Orbitron', sans-serif;
+}
+
+p {
+  color: #2eb82e;
+  font-family: 'Orbitron', sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+body {
+  background-color: #1A0315;
+  color: #6E3667;
+}
+
+h1 {
+font-family: 'Press Start 2P', cursive;
+text-align: center;
+font-size: 75px;
+color: black;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: white;
+}
+
+h2, #whoseTurn {
+  font-family: 'Press Start 2P', cursive;
+  color: #1A0315;;
+  -webkit-text-stroke-width: .2px;
+  -webkit-text-stroke-color: white;
+  font-weight: bold;
+}
+
+h3 {
+  color: #2eb82e;
+  text-align:center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+#mountainHeader {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  font-size: 60px;
+  color: black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+#userHealth, #computerHealth {
+  font-size: 40px;
+  font-family: 'Bangers', cursive;
+  color: #1A0315;;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: white;
+}
+
+#whoseTurn {
+ font-family: 'Orbitron', sans-serif;
+}
+
 .Desert-background {
   background-image: url("./img/desertArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Ocean-background {
   background-image: url("./img/oceanArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Jungle-background {
   background-image: url("./img/jungleArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Beach-background {
   background-image: url("./img/beachArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Sky-background {
   background-image: url("./img/skyArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Arctic-background {
   background-image: url("./img/arcticArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Mountain-background {
   background-image: url("./img/mountainArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Swamp-background {
   background-image: url("./img/swampArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Farm-background {
   background-image: url("./img/farmArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .Moon-background {
   background-image: url("./img/moonArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .blueBackground {
   background-color: #00004d;
 }
+
 .lightningFlash {
   background-image: url("./img/lightning_PNG23.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.userImage {
+  margin-left: 5px;
+  margin-right: 1200px;
+  margin-bottom: 125px;
+  max-height: 350px;
+  height:auto;
+  width:auto;
+}
+
+.computerImage {
+  margin-left: 1200px;
+  margin-right: 5px;
+  margin-bottom: 125px;
+  max-height: 350px;
+  height:auto;
+  width:auto;
+}
+
+#fixed-top-comp {
+  margin-left: 1100px;
+  margin-right: 5px;
+  margin-top: 300px;
+}
+
+#fixed-top-user {
+  margin-right: 1100px;
+  margin-bottom: 75px;
+  margin-top: 300px;
+}
+
+.btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.btn-danger {
+    background-color: black;
+}
+
+.card-btn {
+  background-color: #6E3667;
+  color: #2eb82e;
+  width: 200px;
+  display: block;
+  text-align: center;
+  border-color: #2eb82e;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+#attackChunk {
+  margin-bottom: 50px;
 }
