@@ -155,9 +155,9 @@ export function checkHomeArena(fighter, arena) {
 export function clickAttack(match, compAttacksArray) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
   const maxClick = function() {
     match.maxAttack(match.computerFighter); //deal damage to computerFighter
-    $("#userAttack").html(`<h3><em>${$("#maxAttack").text()}!</em></h3>`);
+    $("#userAttack").html(`<h2><em>${$("#maxAttack").text()}!</em></h2>`);             //
     //turn off click listeners for all three buttons
-    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
+    $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
@@ -165,49 +165,49 @@ export function clickAttack(match, compAttacksArray) { //function for turning cl
       //wait 2 seconds, then computer takes its turn & turns all three buttons back on
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h3><em>${compAttacksArray[number]}!</em></h3>`);
+      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);        //
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
-      $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+      $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
     }, 2000);
   }
   $("#maxAttack").click(maxClick);
 
   const medClick = function(){
     match.medAttack(match.computerFighter);
-  $("#userAttack").html(`<h3><em>${$("#medAttack").text()}!</em></h3>`);
-    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
+  $("#userAttack").html(`<h2><em>${$("#medAttack").text()}!</em></h2>`);                //
+    $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
     setTimeout(function(){
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h3><em>${compAttacksArray[number]}!</em></h3>`);
+      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
-      $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+      $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
     }, 2000);
   }
   $("#medAttack").click(medClick);
 
   const minClick = function(){
     match.minAttack(match.computerFighter);
-    $("#userAttack").html(`<h3><em>${$("#minAttack").text()}!</em></h3>`);
-    $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
+    $("#userAttack").html(`<h2><em>${$("#minAttack").text()}!</em></h2>`);
+    $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
     setTimeout(function(){
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h3><em>${compAttacksArray[number]}!</em></h3>`);
+      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
-      $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+      $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
     }, 2000);
   }
   $("#minAttack").click(minClick);

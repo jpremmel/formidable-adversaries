@@ -9,7 +9,7 @@ import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponen
 $(document).ready(function() {
   //CALL FUNCTIONS AND INSTANTIATE CLASSES written in frontend.js and backend.js and imported above
   FrontEnd();
-  const userChoice;
+  let userChoice;
   $(".card").on("click", ".choose", function() {
     userChoice = this.name;
   });
@@ -17,7 +17,7 @@ $(document).ready(function() {
     const arena = $(this).text();
     $("body").addClass(`${arena}-background`);
     $(".arena").hide();
-    compChoice = chooseOpponent(userChoice);
+    const compChoice = chooseOpponent(userChoice);
     $("#userImg").html(`<img class="userImage" src="./img/${userChoice}.png">`);
     $("#computerImg").html(`<img class="computerImage" src="./img/${compChoice}.png">`);
     const userFighter = new Fighter(userChoice); //example; will populate this with the user's choice
@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
 
     const match = new Match(userFighter, computerFighter);
-    $("#whoseTurn").html(`It's ${match.userFighter.name}'s turn!`);
+    $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
     match.userFighter.setHealth(); //start interval to slowly increase the userFighter's health over time
     match.computerFighter.setHealth(); //start interval to slowly increase the userFighter's health over time
     const compAttacksArray = buttonScramble(userFighter.name, computerFighter.name);
