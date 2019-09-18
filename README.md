@@ -1,6 +1,6 @@
 # _Formidable Adversaries_
 
-#### _A user-versus-computer fight to the death, 16 Sept 2019_
+#### _A user-versus-computer fight to the death, 19 Sept 2019_
 
 #### By _**Sofia Giordano, Lauren Musante, Christopher Burge, and Jacqueline Remmel**_
 
