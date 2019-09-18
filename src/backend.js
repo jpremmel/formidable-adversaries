@@ -5,7 +5,7 @@ export class Match {
     this.userFighter = userFighter;
     this.computerFighter = computerFighter;
   }
-  maxAttack(fighter) { //methods for decreasing a figher's health when its opponent attacks
+  maxAttack(fighter) {
   fighter.health -= 10;
   }
   medAttack(fighter) {
@@ -14,35 +14,35 @@ export class Match {
   minAttack(fighter) {
     fighter.health -= 5;
   }
-  pickRandomAttack() { //method to randomly pick the computerFighter's attack against the userFighter
-  const number = Math.round(Math.random() * 2);
-  if (number === 0) {
-    this.maxAttack(this.userFighter);
-  } else if (number === 1) {
-    this.medAttack(this.userFighter);
-  } else if (number === 2) {
-    this.minAttack(this.userFighter);
+  pickRandomAttack() {
+    const number = Math.round(Math.random() * 2);
+    if (number === 0) {
+      this.maxAttack(this.userFighter);
+    } else if (number === 1) {
+      this.medAttack(this.userFighter);
+    } else if (number === 2) {
+      this.minAttack(this.userFighter);
+    }
   }
-}
-rematch() {
-  this.userFighter.health = 50;
-  this.computerFighter.health = 50;
+  rematch() {
+    this.userFighter.health = 50;
+    this.computerFighter.health = 50;
   }
 }
 
 export class Fighter {
   constructor(name) {
-    this.name = name; //ex. "Bruce the Baboon"
+    this.name = name;
     this.health = 50;
-    this.atHome = false; //boolean, will be "true" when animal is on home turf
+    this.atHome = false;
   }
 
-  setHealth() { //method to increase fighter's health slowly over time. make sure to call this method when the fight begins and clear it (using clearInterval()) when the fight ends!
+  setHealth() {
     this.healthInterval = setInterval(() => {
       this.health++;
     }, 2000);
-
   }
+
   applyHomeAdvantage() {
     if (this.atHome){
       this.health += 10;
@@ -58,11 +58,11 @@ export function chooseOpponent(userChoice) {
       characters.splice(i, 1);
     }
   }
-let numberFighter = Math.round(Math.random() * 7);
-return characters[numberFighter];
+  let numberFighter = Math.round(Math.random() * 7);
+  return characters[numberFighter];
 }
 
-export function buttonScramble(userFighterName, compFighterName) { //function to scramble the order in which the three attack buttons are appended to the html page. need to call this function when the match begins.
+export function buttonScramble(userFighterName, compFighterName) {
   let buttons = [`<button id="maxAttack" class="btn btn-danger"></button>`, `<button id="medAttack" class="btn btn-danger"></button>`, `<button id="minAttack" class="btn btn-danger"></button>`];
   const numberRemove = Math.round(Math.random() * 2);
   const numberInsert = Math.round(Math.random() * 2);
@@ -152,20 +152,18 @@ export function checkHomeArena(fighter, arena) {
   }
 }
 
-export function clickAttack(match, compAttacksArray) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
+export function clickAttack(match, compAttacksArray) {
   const maxClick = function() {
-    match.maxAttack(match.computerFighter); //deal damage to computerFighter
-    $("#userAttack").html(`<h2><em>${$("#maxAttack").text()}!</em></h2>`);             //
-    //turn off click listeners for all three buttons
+    match.maxAttack(match.computerFighter);
+    $("#userAttack").html(`<h2><em>${$("#maxAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
     setTimeout(function() {
-      //wait 2 seconds, then computer takes its turn & turns all three buttons back on
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);        //
+      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
@@ -176,7 +174,7 @@ export function clickAttack(match, compAttacksArray) { //function for turning cl
 
   const medClick = function(){
     match.medAttack(match.computerFighter);
-  $("#userAttack").html(`<h2><em>${$("#medAttack").text()}!</em></h2>`);                //
+  $("#userAttack").html(`<h2><em>${$("#medAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
@@ -213,7 +211,7 @@ export function clickAttack(match, compAttacksArray) { //function for turning cl
   $("#minAttack").click(minClick);
 }
 
-export function checkHealth(match) { //method to check each fighter's health levels every half second. if it finds that one of the fighter has a health less than or equal to zero, declare the other player the winner and clear all the intervals.
+export function checkHealth(match) {
   let checkInterval = setInterval(() => {
     $("#computerHealth").html(`${match.computerFighter.name}'s Health Level: ${match.computerFighter.health}`);
     $("#userHealth").html(`${match.userFighter.name}'s Health Level: ${match.userFighter.health}`);
