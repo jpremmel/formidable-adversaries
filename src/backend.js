@@ -49,6 +49,7 @@ export class Fighter {
     }
   }
 }
+
 export function chooseOpponent(userChoice) {
   let characters = ["Carol the Cactus", "Octavia the Octopus", "Bruce the Baboon", "Lenny Crabitz", "Pterry the Pterodactyl", "Patti the Penguin", "Misty the Mountain Goat", "Gart the Gator", "Paco the Pig"];
 
@@ -106,36 +107,25 @@ export function buttonScramble(userFighterName, compFighterName) { //function to
     $("#medAttack").text("Acid Mud");
     $("#minAttack").text("Oink Overload");
   }
-
-let compAttacksArray;
-
+  let compAttacksArray;
   if (compFighterName === "Carol the Cactus"){
     compAttacksArray = ["Throw Spikes", "Flash Flood", "Blind With Sunlight"];
-
   } else if (compFighterName === "Octavia the Octopus"){
     compAttacksArray = ["Beak Bite", "Ink Attack", "Camoflauge Attack"];
-
   } else if (compFighterName === "Bruce the Baboon"){
     compAttacksArray = ["Banshee Cry", "Tail Choke", "Power Bite"];
-
   } else if (compFighterName === "Lenny Crabitz"){
     compAttacksArray = ["Scarf Strangle", "Death Pinch", "Fish Fart"];
-
   } else if (compFighterName === "Pterry the Pterodactyl"){
     compAttacksArray = ["Eye Gouge", "Boom Flap", "Swoop n' Snatch"];
-
   } else if (compFighterName === "Patti the Penguin"){
     compAttacksArray = ["Flap Slap", "Slip n' Slide", "Icicle Impalement"];
-
   } else if (compFighterName === "Misty the Mountain Goat"){
     compAttacksArray = ["BAAttle Cry", "Powerkick", "Head Butt"];
-
   } else if (compFighterName === "Gart the Gator"){
     compAttacksArray = ["Death Roll", "Snapper Bite", "Tail Smack"];
-
   } else if (compFighterName === "Paco the Pig"){
     compAttacksArray = ["Smother Sit", "Acid Mud", "Oink Overload"];
-
   }
   return compAttacksArray;
 }
@@ -162,13 +152,9 @@ export function checkHomeArena(fighter, arena) {
   }
 }
 
-
-
-
 export function clickAttack(match, compAttacksArray) { //function for turning click listeners on and off for attack buttons. click listener is on while it's the user's turn, then turned off for 2 seconds while it's the computerFighter's turn.
   const maxClick = function() {
     match.maxAttack(match.computerFighter); //deal damage to computerFighter
-
     $("#userAttack").html(`<h3><em>${$("#maxAttack").text()}!</em></h3>`);
     //turn off click listeners for all three buttons
     $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
@@ -191,7 +177,6 @@ export function clickAttack(match, compAttacksArray) { //function for turning cl
   const medClick = function(){
     match.medAttack(match.computerFighter);
   $("#userAttack").html(`<h3><em>${$("#medAttack").text()}!</em></h3>`);
-
     $("#whoseTurn").html(`It's ${match.computerFighter.name}'s turn!`);
     $("#maxAttack").off();
     $("#medAttack").off();
@@ -215,8 +200,6 @@ export function clickAttack(match, compAttacksArray) { //function for turning cl
     $("#maxAttack").off();
     $("#medAttack").off();
     $("#minAttack").off();
-
-
     setTimeout(function(){
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
@@ -242,7 +225,6 @@ export function checkHealth(match) { //method to check each fighter's health lev
       $("#medAttack").off();
       $("#minAttack").off();
       alert(`${match.computerFighter.name} Wins! `);
-
     } else if (match.computerFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
