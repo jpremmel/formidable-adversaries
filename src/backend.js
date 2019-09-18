@@ -238,13 +238,18 @@ export function checkHealth(match) { //method to check each fighter's health lev
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
+      $("#maxAttack").off();
+      $("#medAttack").off();
+      $("#minAttack").off();
       alert(`${match.computerFighter.name} Wins! `);
 
     } else if (match.computerFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
-      // change alert to modal???
+      $("#maxAttack").off();
+      $("#medAttack").off();
+      $("#minAttack").off();
       alert(`${match.userFighter.name} Wins!`);
     }
   }, 100);
