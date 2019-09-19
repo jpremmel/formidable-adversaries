@@ -2,7 +2,7 @@
 
 #### _A user-versus-computer fight to the death, 19 Sept 2019_
 
-#### By _**Sofia Giordano, Lauren Musante, Christopher Burge, and Jacqueline Remmel**_
+#### By _**Sofia Giordano, Lauren Musante, Christopher Burge, and Jacqueline Remmel. Honorary member: Joel Stockamp**_
 
 ## Description
 
