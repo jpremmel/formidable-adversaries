@@ -21,8 +21,8 @@
 }
 
 #home-advantage, #end-game {
-  margin-top: 200px;
-  width: 45%;
+  margin-top: 327px;
+  width: 35%;
   height: auto;
   display: block;
   margin-left: auto;
@@ -40,7 +40,7 @@
  .whoWon {
    font-size: 50px;
  }
- 
+
 .arena {
   display: none;
 }

@@ -229,6 +229,8 @@ export function checkHealth(match) {
       $("#medAttack").off();
       $("#minAttack").off();
       $("#winner").text(`${match.computerFighter.name}`);
+      $(".attack").hide();
+      $("#whoseTurn").hide();
       $("#end-game").show();
     } else if (match.computerFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
@@ -238,6 +240,8 @@ export function checkHealth(match) {
       $("#medAttack").off();
       $("#minAttack").off();
       $("#winner").text(`${match.userFighter.name}`);
+      $(".attack").hide();
+      $("#whoseTurn").hide();
       $("#end-game").show();
     }
   }, 100);
