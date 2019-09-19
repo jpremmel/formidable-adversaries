@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import TSwift from "./TSwift-goat.mp3";
+import Fart from "./fart-2.mp3";
 
 export class Match {
   constructor(userFighter, computerFighter) {
@@ -198,6 +199,11 @@ export function clickAttack(match, compAttacksArray) {
   $("#medAttack").click(medClick);
 
   const minClick = function(){
+    if (match.userFighter.name === "Lenny Crabitz") {
+      let fart = new Audio(Fart);
+      fart.play();
+      fart.volume = 0.1;
+    }
     match.minAttack(match.computerFighter);
     $("#userAttack").html(`<h2 class="userColor"><em>${$("#minAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);

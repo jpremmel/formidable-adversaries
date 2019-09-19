@@ -133,14 +133,14 @@ h3 {
 #userHealthNumber {
   color: #e62e00;
   font-size: 150px;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
 
 #computerHealthNumber {
   color: #7575a3;
   font-size: 150px;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
 

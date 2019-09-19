@@ -56,17 +56,17 @@ $(document).ready(function() {
         $("#home-advantage").show();
         setTimeout(function() {
           $("#home-advantage").hide();
-          startGame();
+          startGame(match);
         }, 5000);
       } else if (computerFighter.atHome) {
         $("#at-home").text(`${computerFighter.name}`);
         $("#home-advantage").show();
         setTimeout(function() {
           $("#home-advantage").hide();
-          startGame();
+          startGame(match);
         }, 5000);
       } else {
-        startGame();
+        startGame(match);
       }
     }, 3200);
     $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
@@ -76,7 +76,7 @@ $(document).ready(function() {
   });
 });
 
-function startGame() {
+function startGame(match) {
   $("#whoseTurn").show();
   $(".attack-buttons").show();
   $("#userHealth").show();
