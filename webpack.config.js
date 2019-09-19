@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
 entry: './src/main.js',
 output: {
@@ -57,6 +56,16 @@ module: {
           bypassOnDebug: true, // webpack@1.x
           disable: true, // webpack@2.x and newer
         }
+      }]
+
+    },
+    {
+
+      test: /\.(wav|mp3)$/i,
+      use: [
+        'file-loader',
+        {
+        loader: 'file-loader'
       }]
 
     },

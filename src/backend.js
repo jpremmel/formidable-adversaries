@@ -154,6 +154,13 @@ export function checkHomeArena(fighter, arena) {
 
 export function clickAttack(match, compAttacksArray) {
   const maxClick = function() {
+    if (match.userFighter.name === "Misty the Mountain Goat") {
+      let music = document.createElement('audio');
+      music.setAttribute('src', require('./TSwift-goat.wav'));
+      music.setAttribute('type', 'audio/wav');
+      let promise = music.play();
+      console.log(promise);
+    }
     match.maxAttack(match.computerFighter);
     $("#userAttack").html(`<h2><em>${$("#maxAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
