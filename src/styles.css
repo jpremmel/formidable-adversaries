@@ -8,10 +8,6 @@
   display: block;
 }
 
-.arena {
-  display: none;
-}
-
 .card-title {
   text-align: center;
   margin-top: 120px;
@@ -32,6 +28,10 @@
   margin-top: 20px;
   height: 500px;
   padding: 15px;
+}
+
+.arena {
+  display: none;
 }
 
 .arena img {
@@ -88,6 +88,39 @@ h3 {
   font-family: 'Orbitron', sans-serif;
   font-size: 22px;
   margin-top: 10px;
+}
+
+.attack {
+  margin-top: 300px;
+}
+#userHealthNumber {
+  color: #e62e00;
+  font-size: 150px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+
+#computerHealthNumber {
+  color: #7575a3;
+  font-size: 150px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+
+.userColor {
+  color: #e62e00;
+  font-size: 135px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-family: 'Bangers', cursive;
+}
+
+.computerColor {
+  color: #7575a3;
+  font-size: 135px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-family: 'Bangers', cursive;
 }
 
 #mountainHeader {

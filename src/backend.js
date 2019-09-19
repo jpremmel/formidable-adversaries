@@ -155,7 +155,7 @@ export function checkHomeArena(fighter, arena) {
 export function clickAttack(match, compAttacksArray) {
   const maxClick = function() {
     match.maxAttack(match.computerFighter);
-    $("#userAttack").html(`<h2><em>${$("#maxAttack").text()}!</em></h2>`);
+    $("#userAttack").html(`<h2 class="userColor"><em>${$("#maxAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
@@ -163,7 +163,7 @@ export function clickAttack(match, compAttacksArray) {
     setTimeout(function() {
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);
+      $("#computerAttack").html(`<h2 class="computerColor"><em>${compAttacksArray[number]}!</em></h2>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
@@ -174,7 +174,7 @@ export function clickAttack(match, compAttacksArray) {
 
   const medClick = function(){
     match.medAttack(match.computerFighter);
-  $("#userAttack").html(`<h2><em>${$("#medAttack").text()}!</em></h2>`);
+  $("#userAttack").html(`<h2 class="userColor"><em>${$("#medAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
@@ -182,7 +182,7 @@ export function clickAttack(match, compAttacksArray) {
     setTimeout(function(){
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);
+      $("#computerAttack").html(`<h2 class="computerColor"><em>${compAttacksArray[number]}!</em></h2>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
@@ -193,7 +193,7 @@ export function clickAttack(match, compAttacksArray) {
 
   const minClick = function(){
     match.minAttack(match.computerFighter);
-    $("#userAttack").html(`<h2><em>${$("#minAttack").text()}!</em></h2>`);
+    $("#userAttack").html(`<h2 class="userColor"><em>${$("#minAttack").text()}!</em></h2>`);
     $("#whoseTurn").html(`<h2>It's ${match.computerFighter.name}'s turn!</h2>`);
     $("#maxAttack").off();
     $("#medAttack").off();
@@ -201,7 +201,7 @@ export function clickAttack(match, compAttacksArray) {
     setTimeout(function(){
       match.pickRandomAttack();
       const number =  Math.round(Math.random() * 2);
-      $("#computerAttack").html(`<h2><em>${compAttacksArray[number]}!</em></h2>`);
+      $("#computerAttack").html(`<h2 class="computerColor"><em>${compAttacksArray[number]}!</em></h2>`);
       $("#maxAttack").click(maxClick);
       $("#medAttack").click(medClick);
       $("#minAttack").click(minClick);
@@ -213,8 +213,8 @@ export function clickAttack(match, compAttacksArray) {
 
 export function checkHealth(match) {
   let checkInterval = setInterval(() => {
-    $("#computerHealth").html(`${match.computerFighter.name}'s Health Level: ${match.computerFighter.health}`);
-    $("#userHealth").html(`${match.userFighter.name}'s Health Level: ${match.userFighter.health}`);
+    $("#computerHealth").html(`${match.computerFighter.name}'s Health Level: <h1 id="computerHealthNumber"> ${match.computerFighter.health}</h1>`);
+    $("#userHealth").html(`${match.userFighter.name}'s Health Level: <h1 id="userHealthNumber">${match.userFighter.health}</h1>`);
       if (match.userFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
