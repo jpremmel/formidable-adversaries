@@ -14,7 +14,7 @@
           <div class="col-md-4">
             <div class="cactus">
               <div class="card front" id="cactusFront">
-                <img class="card-img-top" src="./img/Carol the Cactus.png" alt="cactus">
+                <img class="card-img-top" id="Carol" src="./img/Carol the Cactus.png" alt="cactus">
                 <h3>Carol the Cactus</h3>
                 <button id="cactusChoose" class="btn choose card-btn" type="button" name="Carol the Cactus">Choose</button>
                 <button id="cactusInfo" class="btn card-btn" type="button" name="button">More Info</button>
@@ -121,7 +121,7 @@
           <div class="col-md-4">
             <div class="pengiun">
               <div class="card front" id="penguinFront">
-                <img class="card-img-top" src="./img/Patti the Penguin.png" alt="penguin">
+                <img class="card-img-top" id="Patti" src="./img/Patti the Penguin.png" alt="penguin">
                 <h3>Patti the Penguin</h3>
                 <button id="penguinChoose" class="btn choose card-btn" type="button" name="Patti the Penguin">Choose</button>
                 <button id="penguinInfo" class="btn card-btn" type="button" name="button">More Info</button>
@@ -140,7 +140,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" id="bottom-row">
           <div class="col-md-4">
             <div class="goat">
               <div class="card front" id="goatFront">
@@ -320,6 +320,12 @@
         </div>
       </div>
       <div class="game-play">
+        <div class="card" id="home-advantage">
+          <h3>Home Arena Advantage! <span id="at-home"></span> gets +10 health points!</h3>
+        </div>
+        <div class="card" id="end-game">
+          <p><span class = "fatality"><strong><em>Fatality!</em></strong></span><br><span class = "whoWon"><span id="winner"></span> wins!</span></p>
+        </div>
         <div class="fixed-bottom">
           <span id="computerImg"></span>
         </div>

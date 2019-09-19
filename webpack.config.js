@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
 entry: './src/main.js',
 output: {
@@ -47,7 +46,6 @@ module: {
       loader: "eslint-loader"
     },
     {
-
       test: /\.(gif|png|jpe?g|svg)$/i,
       use: [
         'file-loader',
@@ -59,6 +57,10 @@ module: {
         }
       }]
 
+    },
+    {
+      test: /\.mp3$/,
+      use: 'file-loader'
     },
     {
       test: /\.js$/,

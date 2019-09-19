@@ -3,9 +3,46 @@
 }
 
 .card-img-top {
-  width: 318px;
-  height: 335px;
+  height: 60%;
+  width: auto;
   display: block;
+}
+
+#Patti, #Carol {
+  height: 65%;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bottom-row .card {
+  margin-bottom: 20px;
+}
+
+#home-advantage, #end-game {
+  margin-top: 200px;
+  width: 45%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #1A0315;
+  border-color: #2eb82e;
+  border-width: thick;
+}
+
+.fatality {
+  font-size: 150px;
+}
+
+ .whoWon {
+   font-size: 50px;
+ }
+ 
+.arena {
+  display: none;
 }
 
 .card-title {
