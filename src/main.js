@@ -9,6 +9,10 @@ import Thunder from "./shortthunder.mp3";
 $(document).ready(function() {
   $("#home-advantage").hide();
   $("#end-game").hide();
+  $(".attack-buttons").hide();
+  $("#userHealth").hide();
+  $("#computerHealth").hide();
+  $("#whoseTurn").hide();
   FrontEnd();
   let userChoice;
   $(".card").on("click", ".choose", function() {
@@ -52,16 +56,18 @@ $(document).ready(function() {
         $("#home-advantage").show();
         setTimeout(function() {
           $("#home-advantage").hide();
+          startGame();
         }, 5000);
       } else if (computerFighter.atHome) {
         $("#at-home").text(`${computerFighter.name}`);
         $("#home-advantage").show();
         setTimeout(function() {
           $("#home-advantage").hide();
+          startGame();
         }, 5000);
+      } else {
+        startGame();
       }
-      match.userFighter.setHealth();
-      match.computerFighter.setHealth();
     }, 3200);
     $("#whoseTurn").html(`<h2>It's ${match.userFighter.name}'s turn!</h2>`);
     const compAttacksArray = buttonScramble(userFighter.name, computerFighter.name);
@@ -69,3 +75,12 @@ $(document).ready(function() {
     checkHealth(match);
   });
 });
+
+function startGame() {
+  $("#whoseTurn").show();
+  $(".attack-buttons").show();
+  $("#userHealth").show();
+  $("#computerHealth").show();
+  match.userFighter.setHealth();
+  match.computerFighter.setHealth();
+}

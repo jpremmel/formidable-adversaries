@@ -74,11 +74,11 @@ export function buttonScramble(userFighterName, compFighterName) {
   if (userFighterName === "Carol the Cactus"){
     $("#maxAttack").text("Throw Spikes");
     $("#medAttack").text("Flash Flood");
-    $("#minAttack").text("Blind With Sunlight");
+    $("#minAttack").text("Blinding Sunlight");
   } else if (userFighterName === "Octavia the Octopus"){
     $("#maxAttack").text("Beak Bite");
     $("#medAttack").text("Ink Attack");
-    $("#minAttack").text("Camoflauge Attack");
+    $("#minAttack").text("Camoflauge");
   } else if (userFighterName === "Bruce the Baboon"){
     $("#maxAttack").text("Banshee Cry");
     $("#medAttack").text("Tail Choke");

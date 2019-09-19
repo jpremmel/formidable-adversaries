@@ -9,7 +9,7 @@
 }
 
 #Patti, #Carol {
-  height: 65%;
+  height: 60%;
   width: auto;
   display: block;
   margin-left: auto;
@@ -21,8 +21,8 @@
 }
 
 #home-advantage, #end-game {
-  margin-top: 327px;
-  width: 35%;
+  margin-top: 300px;
+  width: 40%;
   height: auto;
   display: block;
   margin-left: auto;
