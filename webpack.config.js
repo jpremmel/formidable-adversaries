@@ -59,10 +59,8 @@ module: {
 
     },
     {
-      test: /\.(wav|mp3)$/i,
-      use: [
-        'file-loader',
-      ]
+      test: /\.mp3$/,
+      use: 'file-loader'
     },
     {
       test: /\.js$/,

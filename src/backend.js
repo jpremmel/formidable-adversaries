@@ -1,6 +1,5 @@
 import $ from 'jquery';
-import { TSwift } from "./TSwift-goat.wav";
-console.log(TSwift);
+import TSwift from "./TSwift-goat.mp3";
 
 export class Match {
   constructor(userFighter, computerFighter) {
@@ -157,17 +156,8 @@ export function checkHomeArena(fighter, arena) {
 export function clickAttack(match, compAttacksArray) {
   const maxClick = function() {
     if (match.userFighter.name === "Misty the Mountain Goat") {
-      // $("#TSwift").html('<audio autoplay><source src="../src/TSwift-goat.wav"></audio>');
-
-      // let music = document.createElement('audio');
-      // music.setAttribute('src', require('./TSwift-goat.wav'));
-      // music.setAttribute('type', 'audio/wav');
-      // let promise = music.play();
-      // console.log(promise);
-
       let tSwiftGoat = new Audio(TSwift);
-      console.log(tSwiftGoat);
-      console.log(tSwiftGoat.play());
+      tSwiftGoat.play();
       tSwiftGoat.volume = 0.1;
     }
     match.maxAttack(match.computerFighter);
@@ -238,7 +228,8 @@ export function checkHealth(match) {
       $("#maxAttack").off();
       $("#medAttack").off();
       $("#minAttack").off();
-      alert(`${match.computerFighter.name} Wins! `);
+      $("#winner").text(`${match.computerFighter.name}`);
+      $("#end-game").show();
     } else if (match.computerFighter.health <= 0) {
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
@@ -246,7 +237,8 @@ export function checkHealth(match) {
       $("#maxAttack").off();
       $("#medAttack").off();
       $("#minAttack").off();
-      alert(`${match.userFighter.name} Wins!`);
+      $("#winner").text(`${match.userFighter.name}`);
+      $("#end-game").show();
     }
   }, 100);
 }

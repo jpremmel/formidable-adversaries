@@ -20,17 +20,26 @@
   margin-bottom: 20px;
 }
 
- #home-advantage {
+#home-advantage, #end-game {
   margin-top: 200px;
-  width: 60%;
+  width: 45%;
   height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   background-color: #1A0315;
+  border-color: #2eb82e;
+  border-width: thick;
 }
 
+.fatality {
+  font-size: 150px;
+}
+ .whoWon {
+   font-size: 50px;
+ }
+ 
 .arena {
   display: none;
 }
