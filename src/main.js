@@ -6,6 +6,7 @@ import { FrontEnd } from './frontend.js'
 import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponent, checkHomeArena } from './backend.js';
 
 $(document).ready(function() {
+  $("#home-advantage").hide();
   FrontEnd();
   let userChoice;
   $(".card").on("click", ".choose", function() {
@@ -18,8 +19,8 @@ $(document).ready(function() {
 
     $("#userImg").html(`<img class="userImage" src="./img/${userChoice}.png">`);
     $("#computerImg").html(`<img class="computerImage" src="./img/${compChoice}.png">`);
-    const userFighter = new Fighter(userChoice); 
-    checkHomeArena(userFighter, arena); 
+    const userFighter = new Fighter(userChoice);
+    checkHomeArena(userFighter, arena);
     userFighter.applyHomeAdvantage();
 
     const computerFighter = new Fighter(compChoice);
@@ -27,9 +28,17 @@ $(document).ready(function() {
     computerFighter.applyHomeAdvantage();
 
     if (userFighter.atHome){
-      alert(`${userFighter.name} has the home court advantage! Enjoy 10 extra health points!`);
+      $("#at-home").text(`${userFighter.name}`);
+      $("#home-advantage").show();
+      setTimeout(function() {
+        $("#home-advantage").hide();
+      }, 3000);
     } else if (computerFighter.atHome){
-      alert(`Your opponent, ${computerFighter.name}, has the home court advantage of 10 extra health points!`);
+      $("#at-home").text(`${computerFighter.name}`);
+      $("#home-advantage").show();
+      setTimeout(function() {
+        $("#home-advantage").hide();
+      }, 3000);
     }
     const match = new Match(userFighter, computerFighter);
 
