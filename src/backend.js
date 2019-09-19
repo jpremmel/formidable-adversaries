@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import TSwift from "./TSwift-goat.mp3";
 import Fart from "./fart-2.mp3";
+import Fatality from "./fatality.mp3";
 
 export class Match {
   constructor(userFighter, computerFighter) {
@@ -224,10 +225,13 @@ export function clickAttack(match, compAttacksArray) {
 }
 
 export function checkHealth(match) {
+  let fatality = new Audio(Fatality);
   let checkInterval = setInterval(() => {
     $("#computerHealth").html(`${match.computerFighter.name}'s Health Level: <h1 id="computerHealthNumber"> ${match.computerFighter.health}</h1>`);
     $("#userHealth").html(`${match.userFighter.name}'s Health Level: <h1 id="userHealthNumber">${match.userFighter.health}</h1>`);
       if (match.userFighter.health <= 0) {
+      fatality.play();
+      fatality.volume = 0.1;
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
@@ -239,6 +243,8 @@ export function checkHealth(match) {
       $("#whoseTurn").hide();
       $("#end-game").show();
     } else if (match.computerFighter.health <= 0) {
+      fatality.play();
+      fatality.volume = 0.1;
       clearInterval(match.userFighter.healthInterval);
       clearInterval(match.computerFighter.healthInterval);
       clearInterval(checkInterval);
