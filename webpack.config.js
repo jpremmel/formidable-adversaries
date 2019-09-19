@@ -46,7 +46,6 @@ module: {
       loader: "eslint-loader"
     },
     {
-
       test: /\.(gif|png|jpe?g|svg)$/i,
       use: [
         'file-loader',
@@ -60,7 +59,6 @@ module: {
 
     },
     {
-
       test: /\.(wav|mp3)$/i,
       use: [
         'file-loader',
