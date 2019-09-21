@@ -1,4 +1,4 @@
-.back {
+.back, .arena {
   display: none;
 }
 
@@ -21,7 +21,7 @@
 }
 
 #home-advantage, #end-game {
-  margin-top: 300px;
+  margin-top: 5%;
   width: 40%;
   height: auto;
   display: block;
@@ -37,12 +37,8 @@
   font-size: 150px;
 }
 
- .whoWon {
-   font-size: 50px;
- }
-
-.arena {
-  display: none;
+.whoWon {
+  font-size: 50px;
 }
 
 .card-title {
@@ -128,8 +124,9 @@ h3 {
 }
 
 .attack {
-  margin-top: 300px;
+  margin-top: 5%;
 }
+
 #userHealthNumber {
   color: #e62e00;
   font-size: 150px;
@@ -179,6 +176,63 @@ h3 {
 
 #whoseTurn {
  font-family: 'Orbitron', sans-serif;
+}
+
+.userImage {
+  margin-left: 5px;
+  margin-right: 1200px;
+  margin-bottom: 3%;
+  max-height: 350px;
+  height:auto;
+  width:auto;
+}
+
+.computerImage {
+  margin-left: 1200px;
+  margin-right: 5px;
+  margin-bottom: 3%;
+  max-height: 350px;
+  height:auto;
+  width:auto;
+}
+
+#fixed-top-comp {
+  margin-left: 1100px;
+  margin-right: 5px;
+  margin-top: 10%;
+}
+
+#fixed-top-user {
+  margin-right: 1100px;
+  margin-bottom: 75px;
+  margin-top: 10%;
+}
+
+.btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.btn-danger {
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+.card-btn {
+  background-color: #6E3667;
+  color: #2eb82e;
+  width: 200px;
+  display: block;
+  text-align: center;
+  border-color: #2eb82e;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+#attackChunk {
+  margin-bottom: 50px;
 }
 
 .Desert-background {
@@ -259,60 +313,4 @@ h3 {
   background-image: url("./img/lightning_PNG23.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.userImage {
-  margin-left: 5px;
-  margin-right: 1200px;
-  margin-bottom: 125px;
-  max-height: 350px;
-  height:auto;
-  width:auto;
-}
-
-.computerImage {
-  margin-left: 1200px;
-  margin-right: 5px;
-  margin-bottom: 125px;
-  max-height: 350px;
-  height:auto;
-  width:auto;
-}
-
-#fixed-top-comp {
-  margin-left: 1100px;
-  margin-right: 5px;
-  margin-top: 300px;
-}
-
-#fixed-top-user {
-  margin-right: 1100px;
-  margin-bottom: 75px;
-  margin-top: 300px;
-}
-
-.btn {
-  margin-left: 2px;
-  margin-right: 2px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.btn-danger {
-    background-color: black;
-}
-
-.card-btn {
-  background-color: #6E3667;
-  color: #2eb82e;
-  width: 200px;
-  display: block;
-  text-align: center;
-  border-color: #2eb82e;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5px;
-}
-
-#attackChunk {
-  margin-bottom: 50px;
 }
