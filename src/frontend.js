@@ -3,12 +3,10 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-
 export function FrontEnd() {
-  //Character Functionality
   $('#cactusChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#cactusInfo').click(function() {
     $('#cactusFront').hide();
@@ -21,7 +19,7 @@ export function FrontEnd() {
 
   $('#octopusChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#octopusInfo').click(function() {
     $('#octopusFront').hide();
@@ -34,7 +32,7 @@ export function FrontEnd() {
 
   $('#baboonChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#baboonInfo').click(function() {
     $('#baboonFront').hide();
@@ -47,7 +45,7 @@ export function FrontEnd() {
 
   $('#crabChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#crabInfo').click(function() {
     $('#crabFront').hide();
@@ -60,7 +58,7 @@ export function FrontEnd() {
 
   $('#pterodactylChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#pterodactylInfo').click(function() {
     $('#pterodactylFront').hide();
@@ -73,7 +71,7 @@ export function FrontEnd() {
 
   $('#penguinChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#penguinInfo').click(function() {
     $('#penguinFront').hide();
@@ -86,7 +84,7 @@ export function FrontEnd() {
 
   $('#goatChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#goatInfo').click(function() {
     $('#goatFront').hide();
@@ -99,7 +97,7 @@ export function FrontEnd() {
 
   $('#gatorChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#gatorInfo').click(function() {
     $('#gatorFront').hide();
@@ -112,7 +110,7 @@ export function FrontEnd() {
 
   $('#pigChoose').click(function() {
     $('.characters').hide();
-    $('.arena').show(); //still need to make arena div and initially hide
+    $('.arena').show();
   });
   $('#pigInfo').click(function() {
     $('#pigFront').hide();
@@ -122,6 +120,4 @@ export function FrontEnd() {
     $('#pigFront').show();
     $('#pigBack').hide();
   });
-
-
 }
