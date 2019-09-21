@@ -125,6 +125,7 @@ h3 {
 
 .attack {
   margin-top: 5%;
+  font-size: 5px;
 }
 
 #userHealthNumber {
@@ -143,7 +144,7 @@ h3 {
 
 .userColor {
   color: #e62e00;
-  font-size: 135px;
+  font-size: 100px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: 'Bangers', cursive;
@@ -151,7 +152,7 @@ h3 {
 
 .computerColor {
   color: #7575a3;
-  font-size: 135px;
+  font-size: 100px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: 'Bangers', cursive;
