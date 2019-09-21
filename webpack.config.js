@@ -8,13 +8,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
 entry: './src/main.js',
 output: {
-  filename: 'bundle.js',
-  path: path.resolve(__dirname, 'dist')
-},
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
 devtool: 'eval-source-map',
 devServer: {
-  contentBase: './dist'
-},
+    contentBase: './dist'
+  },
 plugins: [
   new Dotenv(),
   new UglifyJsPlugin({ sourceMap: true }),
@@ -29,50 +29,50 @@ plugins: [
   })
 ],
 module: {
-  rules: [
-    {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader'
-      ]
-    },
-    {
-      test: /\.js$/,
-      exclude: [
-        /node_modules/,
-        /spec/
-      ],
-      loader: "eslint-loader"
-    },
-    {
-      test: /\.(gif|png|jpe?g|svg)$/i,
-      use: [
-        'file-loader',
-        {
-        loader: 'image-webpack-loader',
-        options: {
-          bypassOnDebug: true, // webpack@1.x
-          disable: true, // webpack@2.x and newer
-        }
-      }]
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.js$/,
+        exclude: [
+          /node_modules/,
+          /spec/
+        ],
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true, // webpack@1.x
+            disable: true, // webpack@2.x and newer
+          }
+        }]
 
-    },
-    {
-      test: /\.mp3$/,
-      use: 'file-loader'
-    },
-    {
-      test: /\.js$/,
-      exclude: [
-        /node_modules/,
-        /spec/
-      ],
-      loader: "babel-loader",
-      options: {
-        presets: ['es2015']
+      },
+      {
+        test: /\.mp3$/,
+        use: 'file-loader'
+      },
+      {
+        test: /\.js$/,
+        exclude: [
+          /node_modules/,
+          /spec/
+        ],
+        loader: "babel-loader",
+        options: {
+          presets: ['es2015']
+        }
       }
-    }
-  ]
-}
+    ]
+  }
 };
