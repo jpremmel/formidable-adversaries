@@ -71,6 +71,7 @@
   border-radius: 15px;
   height: 358px;
   width: 555px;
+  position: absolute;
 }
 
 .arena .card {
@@ -223,7 +224,7 @@ h3 {
 .card-btn {
   background-color: #6E3667;
   color: #2eb82e;
-  width: 200px;
+  width: 180px;
   display: block;
   text-align: center;
   border-color: #2eb82e;
@@ -241,6 +242,7 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  position: relative;
 }
 
 .Ocean-background {
