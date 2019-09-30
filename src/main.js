@@ -19,8 +19,8 @@ $(document).ready(function() {
   $(".card").on("click", ".choose", function() {
     userChoice = this.name;
   });
-  $(".card-img-overlay").on("click", "h1", function() {
-    const arena = $(this).text();
+  $(".col-xl-6").on("click", ".card", function() {
+    const arena = this.id;
     $(".arena").hide();
     const compChoice = chooseOpponent(userChoice);
 
