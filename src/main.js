@@ -13,6 +13,7 @@ $(document).ready(function() {
   $("#userHealth").hide();
   $("#computerHealth").hide();
   $("#whoseTurn").hide();
+  $(".game-play").hide();
   FrontEnd();
   let userChoice;
   $(".card").on("click", ".choose", function() {
@@ -36,7 +37,7 @@ $(document).ready(function() {
     const match = new Match(userFighter, computerFighter);
     let thunder = new Audio(Thunder);
 
-    $(".game-play").hide();
+    // $(".game-play").hide();
     $("h1").hide();
     $("body").addClass("blueBackground");
     thunder.play();

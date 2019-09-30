@@ -2,15 +2,15 @@
   display: none;
 }
 
-.card-img-top {
-  height: 60%;
-  width: auto;
-  display: block;
+.characters .row {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#Patti, #Carol {
-  height: 60%;
-  width: auto;
+.card-img-top {
+  height: auto;
+  width: 70%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -59,7 +59,8 @@
   background-color: #535353;
   border-radius: 15px;
   margin-top: 20px;
-  height: 500px;
+  width: 100%;
+  height: auto;
   padding: 15px;
 }
 
@@ -102,7 +103,7 @@ body {
 h1 {
 font-family: 'Press Start 2P', cursive;
 text-align: center;
-font-size: 75px;
+font-size: 320%;
 color: black;
 -webkit-text-stroke-width: 1px;
 -webkit-text-stroke-color: white;
@@ -131,14 +132,14 @@ h3 {
 
 #userHealthNumber {
   color: #e62e00;
-  font-size: 150px;
+  font-size: 360%;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
 
 #computerHealthNumber {
   color: #7575a3;
-  font-size: 150px;
+  font-size: 360%;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
@@ -171,7 +172,7 @@ h3 {
 #userHealth, #computerHealth {
   font-size: 40px;
   font-family: 'Bangers', cursive;
-  color: #1A0315;;
+  color: #1A0315;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: white;
 }
@@ -181,33 +182,25 @@ h3 {
 }
 
 .userImage {
-  margin-left: 5px;
-  margin-right: 1200px;
   margin-bottom: 3%;
   max-height: 350px;
-  height:auto;
-  width:auto;
+  height: atuo;
+  width: 30%;
 }
 
 .computerImage {
-  margin-left: 1200px;
-  margin-right: 5px;
   margin-bottom: 3%;
   max-height: 350px;
-  height:auto;
-  width:auto;
+  height: auto;
+  width: 30%;
 }
 
-#fixed-top-comp {
-  margin-left: 1100px;
-  margin-right: 5px;
-  margin-top: 10%;
+#userCol {
+  float: left;
 }
 
-#fixed-top-user {
-  margin-right: 1100px;
-  margin-bottom: 75px;
-  margin-top: 10%;
+#computerCol {
+  float: right;
 }
 
 .btn {
@@ -224,7 +217,7 @@ h3 {
 .card-btn {
   background-color: #6E3667;
   color: #2eb82e;
-  width: 180px;
+  width: 80%;
   display: block;
   text-align: center;
   border-color: #2eb82e;
