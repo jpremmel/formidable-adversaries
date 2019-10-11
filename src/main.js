@@ -37,7 +37,6 @@ $(document).ready(function() {
     const match = new Match(userFighter, computerFighter);
     let thunder = new Audio(Thunder);
 
-    // $(".game-play").hide();
     $("h1").hide();
     $("body").addClass("blueBackground");
     thunder.play();
