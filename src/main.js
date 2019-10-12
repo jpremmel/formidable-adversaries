@@ -7,13 +7,7 @@ import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponen
 import Thunder from "./shortthunder.mp3";
 
 $(document).ready(function() {
-  $("#home-advantage").hide();
-  $("#end-game").hide();
-  $(".attack-buttons").hide();
-  $("#userHealth").hide();
-  $("#computerHealth").hide();
-  $("#whoseTurn").hide();
-  $(".game-play").hide();
+  hideGame();
   FrontEnd();
   let userChoice;
   $(".card").on("click", ".choose", function() {
@@ -76,11 +70,25 @@ $(document).ready(function() {
   });
 });
 
+function hideGame() {
+  $("#home-advantage").hide();
+  $("#end-game").hide();
+  $(".attack-buttons").hide();
+  $("#userHealth").hide();
+  $("#computerHealth").hide();
+  $("#whoseTurn").hide();
+  $(".game-play").hide();
+  $("#userImg").hide();
+  $("#computerImg").hide();
+}
+
 function startGame(match) {
   $("#whoseTurn").show();
   $(".attack-buttons").show();
   $("#userHealth").show();
   $("#computerHealth").show();
+  $("#userImg").show();
+  $("#computerImg").show();
   match.userFighter.setHealth();
   match.computerFighter.setHealth();
 }

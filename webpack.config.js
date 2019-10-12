@@ -2,7 +2,6 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const productionConfig = merge([
@@ -24,7 +23,6 @@ devServer: {
     contentBase: './build'
   },
 plugins: [
-  new Dotenv(),
   new UglifyJsPlugin({ sourceMap: true }),
   new CleanWebpackPlugin(['build']),
   new CopyWebpackPlugin([

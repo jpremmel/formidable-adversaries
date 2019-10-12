@@ -21,12 +21,14 @@
 }
 
 #home-advantage, #end-game {
+  position: fixed;
+  right: 25%;
+  left: 25%;
+  z-index: 1;
   margin-top: 5%;
   width: 50%;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 20px;
   background-color: #1A0315;
   border-color: #2eb82e;
@@ -34,11 +36,11 @@
 }
 
 .fatality {
-  font-size: 150px;
+  font-size: 68px;
 }
 
 .whoWon {
-  font-size: 50px;
+  font-size: 36px;
 }
 
 .card-title {
@@ -126,9 +128,11 @@ h3 {
 }
 
 .attack {
+  margin-top: 20%;
+}
+
+#attackCol {
   width: 38%;
-  margin-top: 5%;
-  /* font-size: 5px; */
 }
 
 #userHealthNumber {
@@ -171,6 +175,7 @@ h3 {
 }
 
 #userHealth, #computerHealth {
+  width: 110%;
   font-size: 140%;
   font-family: 'Bangers', cursive;
   color: #1A0315;
@@ -183,7 +188,7 @@ h3 {
 }
 
 .userImage {
-  margin-top: 3%;
+  margin-top: 4%;
   margin-bottom: 3%;
   max-height: 350px;
   height: 40%;
@@ -191,7 +196,7 @@ h3 {
 }
 
 .computerImage {
-  margin-top: 3%;
+  margin-top: 4%;
   margin-bottom: 3%;
   max-height: 350px;
   height: 40%;
