@@ -15,6 +15,8 @@ _In this game, the user gets to choose a fighter from a list of powerful fiction
 * _Run the command "npm install" to install packages_
 * _Run the command "npm run start"_
 
+_A live version of this project can be viewed at https://jpremmel.github.io/formidable-adversaries/._
+
 ## Technologies Used
 
 _JavaScript, jQuery, Webpack, CSS, Bootstrap, HTML_
