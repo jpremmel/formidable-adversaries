@@ -112,9 +112,9 @@ export function buttonScramble(userFighterName, compFighterName) {
   }
   let compAttacksArray;
   if (compFighterName === "Carol the Cactus"){
-    compAttacksArray = ["Throw Spikes", "Flash Flood", "Blind With Sunlight"];
+    compAttacksArray = ["Throw Spikes", "Flash Flood", "Blinding Sunlight"];
   } else if (compFighterName === "Octavia the Octopus"){
-    compAttacksArray = ["Beak Bite", "Ink Attack", "Camoflauge Attack"];
+    compAttacksArray = ["Beak Bite", "Ink Attack", "Camoflauge"];
   } else if (compFighterName === "Bruce the Baboon"){
     compAttacksArray = ["Banshee Cry", "Tail Choke", "Power Bite"];
   } else if (compFighterName === "Lenny Crabitz"){
@@ -156,9 +156,9 @@ export function checkHomeArena(fighter, arena) {
 }
 
 export function clickAttack(match, compAttacksArray) {
+  let tSwiftGoat = new Audio(TSwift);
   const maxClick = function() {
-    if (match.userFighter.name === "Misty the Mountain Goat") {
-      let tSwiftGoat = new Audio(TSwift);
+    if (match.userFighter.name === "Misty the Mountain Goat" && (tSwiftGoat.currentTime === 0 || tSwiftGoat.currentTime === 14.445714)) {
       tSwiftGoat.play();
       tSwiftGoat.volume = 0.1;
     }

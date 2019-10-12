@@ -1,16 +1,16 @@
-.back {
+.back, .arena {
   display: none;
 }
 
-.card-img-top {
-  height: 60%;
-  width: auto;
-  display: block;
+.characters .row {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#Patti, #Carol {
-  height: 60%;
-  width: auto;
+.card-img-top {
+  height: auto;
+  width: 70%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -21,12 +21,14 @@
 }
 
 #home-advantage, #end-game {
-  margin-top: 300px;
-  width: 40%;
+  position: fixed;
+  right: 25%;
+  left: 25%;
+  z-index: 1;
+  margin-top: 5%;
+  width: 50%;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 20px;
   background-color: #1A0315;
   border-color: #2eb82e;
@@ -34,15 +36,11 @@
 }
 
 .fatality {
-  font-size: 150px;
+  font-size: 68px;
 }
 
- .whoWon {
-   font-size: 50px;
- }
-
-.arena {
-  display: none;
+.whoWon {
+  font-size: 36px;
 }
 
 .card-title {
@@ -63,7 +61,8 @@
   background-color: #535353;
   border-radius: 15px;
   margin-top: 20px;
-  height: 500px;
+  width: 100%;
+  height: auto;
   padding: 15px;
 }
 
@@ -75,6 +74,7 @@
   border-radius: 15px;
   height: 358px;
   width: 555px;
+  position: absolute;
 }
 
 .arena .card {
@@ -105,7 +105,7 @@ body {
 h1 {
 font-family: 'Press Start 2P', cursive;
 text-align: center;
-font-size: 75px;
+font-size: 320%;
 color: black;
 -webkit-text-stroke-width: 1px;
 -webkit-text-stroke-color: white;
@@ -128,25 +128,30 @@ h3 {
 }
 
 .attack {
-  margin-top: 300px;
+  margin-top: 20%;
 }
+
+#attackCol {
+  width: 38%;
+}
+
 #userHealthNumber {
   color: #e62e00;
-  font-size: 150px;
+  font-size: 260%;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
 
 #computerHealthNumber {
   color: #7575a3;
-  font-size: 150px;
+  font-size: 260%;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
 
 .userColor {
   color: #e62e00;
-  font-size: 135px;
+  font-size: 65px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: 'Bangers', cursive;
@@ -154,7 +159,7 @@ h3 {
 
 .computerColor {
   color: #7575a3;
-  font-size: 135px;
+  font-size: 65px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   font-family: 'Bangers', cursive;
@@ -170,9 +175,10 @@ h3 {
 }
 
 #userHealth, #computerHealth {
-  font-size: 40px;
+  width: 110%;
+  font-size: 140%;
   font-family: 'Bangers', cursive;
-  color: #1A0315;;
+  color: #1A0315;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: white;
 }
@@ -181,11 +187,67 @@ h3 {
  font-family: 'Orbitron', sans-serif;
 }
 
+.userImage {
+  margin-top: 4%;
+  margin-bottom: 3%;
+  max-height: 350px;
+  height: 40%;
+  width: auto;
+}
+
+.computerImage {
+  margin-top: 4%;
+  margin-bottom: 3%;
+  max-height: 350px;
+  height: 40%;
+  width: auto;
+}
+
+#userCol {
+  display: block;
+  float: left;
+  width: 31%;
+}
+
+#computerCol {
+  display: block;
+  float: right;
+  width: 31%;
+}
+
+.btn {
+  margin-left: 2px;
+  margin-right: 2px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.btn-danger {
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+.card-btn {
+  background-color: #6E3667;
+  color: #2eb82e;
+  width: 80%;
+  display: block;
+  text-align: center;
+  border-color: #2eb82e;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+#attackChunk {
+  margin-bottom: 40px;
+}
+
 .Desert-background {
   background-image: url("./img/desertArena.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  position: relative;
 }
 
 .Ocean-background {
@@ -259,60 +321,4 @@ h3 {
   background-image: url("./img/lightning_PNG23.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.userImage {
-  margin-left: 5px;
-  margin-right: 1200px;
-  margin-bottom: 125px;
-  max-height: 350px;
-  height:auto;
-  width:auto;
-}
-
-.computerImage {
-  margin-left: 1200px;
-  margin-right: 5px;
-  margin-bottom: 125px;
-  max-height: 350px;
-  height:auto;
-  width:auto;
-}
-
-#fixed-top-comp {
-  margin-left: 1100px;
-  margin-right: 5px;
-  margin-top: 300px;
-}
-
-#fixed-top-user {
-  margin-right: 1100px;
-  margin-bottom: 75px;
-  margin-top: 300px;
-}
-
-.btn {
-  margin-left: 2px;
-  margin-right: 2px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.btn-danger {
-    background-color: black;
-}
-
-.card-btn {
-  background-color: #6E3667;
-  color: #2eb82e;
-  width: 200px;
-  display: block;
-  text-align: center;
-  border-color: #2eb82e;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5px;
-}
-
-#attackChunk {
-  margin-bottom: 50px;
 }

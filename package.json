@@ -1,14 +1,14 @@
 {
   "name": "formidable-adversaries",
   "version": "1.0.0",
-  "description": "#### _{Brief description of application}, 16 Sept 2019_",
+  "description": "#### _Team Week Project, 19 Sept 2019_",
   "main": "index.js",
   "scripts": {
-    "test": "karma start karma.conf.js",
     "build": "webpack --mode development",
     "start": "npm run build & webpack-dev-server --open --mode development",
     "watch": "webpack --watch",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git"
@@ -24,27 +24,18 @@
     "clean-webpack-plugin": "^0.1.18",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^0.28.10",
-    "dotenv-webpack": "^1.7.0",
     "eslint": "^4.18.2",
     "eslint-loader": "^2.0.0",
     "file-loader": "^4.2.0",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "^3.0.6",
     "image-webpack-loader": "^6.0.0",
-    "jasmine": "^3.1.0",
-    "jasmine-core": "^2.99.1",
-    "karma": "^2.0.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-cli": "^1.0.1",
-    "karma-jasmine": "^1.1.1",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-jquery": "^0.2.2",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.13",
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "4.19.1",
     "webpack-cli": "^2.0.9",
-    "webpack-dev-server": "^3.1.0"
+    "webpack-dev-server": "^3.1.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

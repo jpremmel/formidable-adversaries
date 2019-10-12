@@ -7,19 +7,14 @@ import { Match, Fighter, clickAttack, checkHealth, buttonScramble, chooseOpponen
 import Thunder from "./shortthunder.mp3";
 
 $(document).ready(function() {
-  $("#home-advantage").hide();
-  $("#end-game").hide();
-  $(".attack-buttons").hide();
-  $("#userHealth").hide();
-  $("#computerHealth").hide();
-  $("#whoseTurn").hide();
+  hideGame();
   FrontEnd();
   let userChoice;
   $(".card").on("click", ".choose", function() {
     userChoice = this.name;
   });
-  $(".card-img-overlay").on("click", "h1", function() {
-    const arena = $(this).text();
+  $(".col-xl-6").on("click", ".card", function() {
+    const arena = this.id;
     $(".arena").hide();
     const compChoice = chooseOpponent(userChoice);
 
@@ -36,7 +31,6 @@ $(document).ready(function() {
     const match = new Match(userFighter, computerFighter);
     let thunder = new Audio(Thunder);
 
-    $(".game-play").hide();
     $("h1").hide();
     $("body").addClass("blueBackground");
     thunder.play();
@@ -76,11 +70,25 @@ $(document).ready(function() {
   });
 });
 
+function hideGame() {
+  $("#home-advantage").hide();
+  $("#end-game").hide();
+  $(".attack-buttons").hide();
+  $("#userHealth").hide();
+  $("#computerHealth").hide();
+  $("#whoseTurn").hide();
+  $(".game-play").hide();
+  $("#userImg").hide();
+  $("#computerImg").hide();
+}
+
 function startGame(match) {
   $("#whoseTurn").show();
   $(".attack-buttons").show();
   $("#userHealth").show();
   $("#computerHealth").show();
+  $("#userImg").show();
+  $("#computerImg").show();
   match.userFighter.setHealth();
   match.computerFighter.setHealth();
 }
